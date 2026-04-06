@@ -13,12 +13,12 @@
             padding: 0;
             width: 100%;
             min-height: 100%;
-            background-color: #222; /* Темный фон-страховка */
+            background-color: #1a1a1a; 
             font-family: "Playfair Display", serif;
             scroll-behavior: smooth;
         }
 
-        /* 1. ГЛАВНЫЙ ЭКРАН СО СТАТУЕЙ */
+        /* 1. ГЛАВНЫЙ ЭКРАН СО СТАТУЕЙ (ЖЕЛЕЗОБЕТОННЫЙ КОД ФОНА) */
         .hero-section {
             position: relative;
             width: 100%;
@@ -26,9 +26,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* ПРОВЕРЬТЕ: название файла должно быть bg-hero.jpg маленькими буквами */
-            background: #222 url('bg-hero.jpg') no-repeat center center;
+            
+            /* Разделенные свойства для 100% отображения */
+            background-color: #1a1a1a;
+            background-image: url('bg-hero.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
             background-size: cover;
+            
             padding: 20px;
             box-sizing: border-box;
         }
@@ -42,7 +47,7 @@
             width: 100%;
         }
 
-        /* Белоснежный текст с тенью, как вы хотели */
+        /* Белоснежный текст с кинематографичной тенью */
         .brand-name {
             font-family: 'Cinzel', serif;
             font-size: clamp(2.5rem, 8vw, 4.2rem);
@@ -116,7 +121,6 @@
             margin: 0 auto;
         }
 
-        /* МОБИЛЬНАЯ АДАПТАЦИЯ */
         @media (max-width: 600px) {
             .hero-overlay { padding: 10px; }
             .brand-name { font-size: 2.3rem; }
@@ -154,7 +158,7 @@
             <div style="width: 50px; height: 2px; background-color: #d4af37; margin: 20px auto 40px auto;"></div>
             
             <p style="font-size: 1.15rem; line-height: 1.8; text-align: justify; border-left: 3px solid #d4af37; padding-left: 20px;">
-                Мы объединили 10-летний опыт работы с серьезными породами, чтобы создать <strong>Sky Locker</strong> — питомник, где качество жизни каждой собаки стоит на первом месте.
+                Мы объединили 10-летний опыт работы с серьезными породами, чтобы создать <strong>Sky Locker</strong> — питомник, где качество жизни каждой собаки стоит на первом месте. Под моим личным руководством (меня зовут Марго) мы отбираем лучших мировых производителей.
             </p>
             
             <img src="about.jpg" alt="Sky Locker" style="width: 100%; max-width: 750px; margin-top: 40px; box-shadow: 20px 20px 0px #f0ece6;">
