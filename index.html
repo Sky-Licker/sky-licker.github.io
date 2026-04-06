@@ -6,14 +6,12 @@
     <title>SKY LICKER - Premium Chow Chow Kennel</title>
     
     <style>
-        /* БЕЗОПАСНЫЕ ШРИФТЫ ДЛЯ КИТАЯ И ВСЕГО МИРА */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             min-height: 100%;
             background-color: #1a1a1a; 
-            /* Классический премиальный шрифт + поддержка красивых китайских иероглифов */
             font-family: "Georgia", "Times New Roman", "Songti SC", "STSong", "SimSun", serif;
             scroll-behavior: smooth;
         }
@@ -44,7 +42,6 @@
         }
 
         .brand-name {
-            /* Строгий римский шрифт для логотипа, встроенный во все устройства */
             font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
             font-size: clamp(2.5rem, 8vw, 4.2rem);
             letter-spacing: 0.2em;
@@ -133,7 +130,7 @@
             margin-bottom: 40px;
             border-left: 3px solid #d4af37;
             padding-left: 20px;
-            text-align: left;
+            text-align: left; /* Жестко задаем левый край */
             font-weight: bold;
         }
 
@@ -142,7 +139,7 @@
             line-height: 1.8;
             color: #555;
             margin-bottom: 25px;
-            text-align: left;
+            text-align: left; /* Жестко задаем левый край */
         }
 
         .about-features {
@@ -188,6 +185,7 @@
             margin-top: 20px;
         }
 
+        /* --- ИСПРАВЛЕНИЯ ДЛЯ ТЕЛЕФОНОВ --- */
         @media (max-width: 600px) {
             .hero-overlay { padding: 10px; }
             .brand-name { font-size: 2.3rem; }
@@ -195,7 +193,13 @@
             .hero-nav { gap: 15px; }
             .hero-nav a { font-size: 0.8rem; display: block; width: 100%; margin: 5px 0; }
             .about-section { padding: 60px 20px; }
-            .about-intro, .about-text { text-align: justify; }
+            
+            /* Главное исправление пробелов: выравниваем текст строго по левому краю на смартфонах */
+            .about-intro, .about-text { 
+                text-align: left; 
+                hyphens: auto; /* Дополнительно разрешаем переносы слов, если браузер их поддерживает */
+                -webkit-hyphens: auto;
+            }
         }
     </style>
 </head>
