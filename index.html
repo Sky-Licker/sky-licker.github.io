@@ -6,7 +6,7 @@
     <title>SKY LOCKER — Premium Chow Chow Kennel</title>
     
     <style>
-        /* Сброс отступов для правильного растягивания */
+        /* Настройки экрана */
         html, body {
             margin: 0;
             padding: 0;
@@ -14,14 +14,13 @@
             height: 100%;
         }
 
-        /* 1. НАДЕЖНЫЙ КОНТЕЙНЕР ДЛЯ ФОНА */
+        /* КОНТЕЙНЕР С ФОНОМ */
         .hero-bg {
             position: relative;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Убрано слово fixed, чтобы не ломать браузеры на телефонах */
             background: url('bg-hero.jpg') no-repeat center center;
             background-size: cover;
             font-family: "Georgia", "Times New Roman", serif;
@@ -29,40 +28,36 @@
             box-sizing: border-box;
         }
 
-        /* 2. ТЕКСТОВЫЙ БЛОК (Стеклянная подложка) */
+        /* КОНТЕЙНЕР ТЕКСТА (ТЕПЕРЬ ПОЛНОСТЬЮ ПРОЗРАЧНЫЙ) */
         .content-overlay {
-            background: rgba(255, 253, 250, 0.2); /* Легкая дымка */
-            backdrop-filter: blur(6px); /* Умеренное размытие */
-            -webkit-backdrop-filter: blur(6px); /* Поддержка для iPhone/Safari */
-            padding: 40px 20px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
+            /* ПОЛНОСТЬЮ УБРАЛИ ФОН, РАЗМЫТИЕ И РАМКИ */
+            background: transparent; 
+            padding: 20px;
             text-align: center;
-            max-width: 650px;
+            max-width: 700px;
             width: 100%;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Легкая тень от блока */
         }
 
-        /* 3. СТИЛИ ТЕКСТА */
+        /* ТЕКСТ С БЕЛЫМ СВЕЧЕНИЕМ ДЛЯ ЧИТАЕМОСТИ */
         .brand-name {
-            font-size: clamp(2.2rem, 8vw, 3.5rem);
+            font-size: clamp(2.5rem, 8vw, 4rem);
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.2em;
             margin: 0;
             color: #111;
-            /* Белое свечение вокруг букв для контраста */
-            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.9);
+            /* Сильный белый ореол, чтобы отклеить текст от фона */
+            text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
         }
 
         .breed-name {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #b8860b;
             text-transform: uppercase;
             letter-spacing: 0.5em;
             margin: 10px 0 30px 0;
             font-weight: bold;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
         }
 
         .gold-divider {
@@ -70,28 +65,30 @@
             height: 2px;
             background-color: #b8860b;
             margin: 0 auto 30px auto;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
 
         .legend-text {
             margin: 12px 0;
             font-style: italic;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #111;
-            font-weight: 600;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.9);
         }
 
         .legend-cn {
             font-style: normal;
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             color: #000;
             margin-top: 25px;
             letter-spacing: 0.1em;
             font-family: "STSong", "SimSun", "Songti SC", serif;
             font-weight: bold;
+            text-shadow: 0 0 12px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, 0.9);
         }
 
-        /* 4. НАВИГАЦИЯ */
+        /* НАВИГАЦИЯ */
         nav {
             margin-top: 40px;
         }
@@ -100,22 +97,22 @@
             display: inline-block;
             text-decoration: none;
             color: #111;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.15em;
             margin: 10px 15px;
             font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 1);
         }
 
         nav a:hover {
             color: #b8860b;
         }
 
-        /* 5. АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ */
+        /* МОБИЛЬНАЯ АДАПТАЦИЯ */
         @media (max-width: 600px) {
             .content-overlay {
-                background: rgba(255, 253, 250, 0.35); /* На телефоне фон чуть плотнее, чтобы текст не сливался с небом */
-                padding: 30px 15px;
+                padding: 10px;
             }
             nav a { 
                 display: block; 
@@ -127,7 +124,6 @@
 <body>
     
     <div class="hero-bg">
-        
         <div class="content-overlay">
             <h1 class="brand-name">SKY LOCKER</h1>
             <p class="breed-name">Chow Chow</p>
@@ -148,7 +144,6 @@
                 <a href="#">Contact</a>
             </nav>
         </div>
-
     </div>
 
 </body>
