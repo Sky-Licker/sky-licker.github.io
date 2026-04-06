@@ -11,9 +11,11 @@
             padding: 0;
             width: 100%;
             min-height: 100%;
-            background-color: #1a1a1a; 
+            /* Меняем базовый фон на глубокий темный */
+            background-color: #111111; 
             font-family: "Georgia", "Times New Roman", "Songti SC", "STSong", "SimSun", serif;
             scroll-behavior: smooth;
+            color: #e0e0e0; /* Основной текст теперь светло-серый */
         }
 
         /* --- ГЛАВНЫЙ ЭКРАН --- */
@@ -24,7 +26,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #1a1a1a;
+            background-color: #111;
             background-image: url('bg-hero.jpg');
             background-position: center center;
             background-repeat: no-repeat;
@@ -101,15 +103,12 @@
             color: #d4af37;
         }
 
-        /* --- БЛОК О НАС --- */
+        /* --- БЛОК О НАС (ТЕМНЫЙ ЛЮКС) --- */
         .about-section {
             padding: 100px 20px;
-            background-color: #fffdfa; 
-            background-image: url('about-bg.jpg'); 
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: #1a1a1a;
+            background-color: #1a1a1a; /* Глубокий серый */
+            /* Тонкий градиент для объема */
+            background: radial-gradient(circle at center, #222222 0%, #111111 100%);
             text-align: center;
         }
         
@@ -121,24 +120,24 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             margin-bottom: 15px;
-            color: #111;
+            color: #ffffff;
         }
 
         .about-intro {
             font-size: 1.2rem;
             line-height: 1.8;
-            color: #333;
+            color: #e0e0e0;
             margin-bottom: 40px;
             border-left: 3px solid #d4af37;
             padding-left: 20px;
             text-align: left;
-            font-weight: bold;
+            font-weight: normal;
         }
 
         .about-text {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #555;
+            color: #cccccc;
             margin-bottom: 25px;
             text-align: left;
         }
@@ -154,17 +153,17 @@
         .feature-box {
             flex: 1;
             min-width: 250px;
-            background-color: rgba(249, 246, 242, 0.8); 
+            background-color: #1f1f1f; 
             padding: 25px;
             border-radius: 4px;
-            border: 1px solid #f0ece6;
+            border: 1px solid #333; /* Строгая темная рамка */
+            border-top: 2px solid #d4af37; /* Золотой акцент сверху */
             text-align: left;
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
         .feature-title {
-            color: #b8860b;
+            color: #d4af37;
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 1.5px;
@@ -174,13 +173,20 @@
             font-weight: bold;
         }
 
-        .feature-text { font-size: 1rem; color: #444; line-height: 1.6; margin: 0; }
-        .about-photo { width: 100%; max-width: 800px; box-shadow: 15px 15px 0px rgba(240, 236, 230, 0.7); margin-top: 20px; }
+        .feature-text { font-size: 1rem; color: #bbb; line-height: 1.6; margin: 0; }
+        
+        .about-photo { 
+            width: 100%; 
+            max-width: 800px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8); /* Глубокая тень */
+            margin-top: 20px; 
+            border: 1px solid #333;
+        }
 
-        /* --- НОВЫЙ БЛОК: НАШИ СОБАКИ --- */
+        /* --- БЛОК НАШИ СОБАКИ (ГАЛЕРЕЯ) --- */
         .dogs-section {
             padding: 100px 20px;
-            background-color: #ffffff; /* Чистый белый фон для галереи */
+            background-color: #111111; /* Самый темный фон */
             text-align: center;
         }
 
@@ -197,42 +203,44 @@
         }
 
         .dog-card {
-            background: #fffdfa;
-            border: 1px solid #f0ece6;
+            background: #1a1a1a;
+            border: 1px solid #d4af37; /* Золотая рамка вокруг карточки */
             border-radius: 4px;
-            overflow: hidden; /* Чтобы фото не вылезало за края скругления */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .dog-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15); /* Золотоватое свечение при наведении */
         }
 
         .dog-img {
             width: 100%;
             height: 380px;
-            object-fit: cover; /* Фото красиво заполняет квадрат, не искажаясь */
-            object-position: top; /* Фокус на морду собаки */
+            object-fit: cover; 
+            object-position: top; 
+            border-bottom: 1px solid #333;
         }
 
         .dog-info-wrapper {
             padding: 25px 20px;
+            background: linear-gradient(180deg, #1f1f1f 0%, #111111 100%);
         }
 
         .dog-name {
             font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
             font-size: 1.8rem;
             margin: 0 0 10px 0;
-            color: #111;
+            color: #ffffff;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .dog-type {
             font-size: 0.8rem;
-            color: #b8860b;
+            color: #d4af37;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 15px;
@@ -242,7 +250,7 @@
 
         .dog-desc {
             font-size: 1rem;
-            color: #555;
+            color: #aaa;
             line-height: 1.6;
             margin: 0;
         }
@@ -256,7 +264,6 @@
             .hero-nav a { font-size: 0.8rem; display: block; width: 100%; margin: 5px 0; }
             .about-section, .dogs-section { padding: 60px 15px; }
             .about-intro, .about-text, .dog-desc { text-align: left; hyphens: auto; -webkit-hyphens: auto; }
-            .about-photo { box-shadow: 10px 10px 0px rgba(240, 236, 230, 0.7); }
             .dog-img { height: 320px; }
         }
     </style>
@@ -300,16 +307,16 @@
             <div class="about-features">
                 <div class="feature-box">
                     <h3 class="feature-title">Здоровье и Генетика</h3>
-                    <p class="feature-text">Мы не идем на компромиссы. Все наши собаки проходят обязательные генетические тесты и имеют официа снимки на отсутствие дисплазии.</p>
+                    <p class="feature-text">Мы не идем на компромиссы. Все наши собаки проходят обязательные генетические тесты и имеют официальные снимки на отсутствие дисплазии.</p>
                 </div>
                 
                 <div class="feature-box">
                     <h3 class="feature-title">Жизнь в Семье</h3>
-                    <p class="feature-text">Наши Чау-Чау живут в загородном доме как полноправные члены семьи. Щенки с первых дней растут в стае, получая идеальную социализацию.</p>
+                    <p class="feature-text">Наши Чау-Чау живут в загородном доме как полноправные члены семьи (одна из наших главных гордостей — потрясающая собака, ее зовут Марго). Щенки с первых дней растут в стае, получая идеальную социализацию.</p>
                 </div>
             </div>
 
-            <p class="about-text" style="text-align: center; font-style: italic; color: #b8860b;">
+            <p class="about-text" style="text-align: center; font-style: italic; color: #d4af37;">
                 Меня зовут <strong>Ирина</strong>, и я лично веду каждый этап: от планирования вязки до бережной отправки щенка в любую точку мира.
             </p>
             
@@ -322,7 +329,7 @@
         <div class="dogs-container">
             <h2 class="section-title">Наши Собаки</h2>
             <div class="gold-divider"></div>
-            <p style="color: #666; font-style: italic; font-size: 1.1rem; margin-bottom: 40px;">Гордость питомника Sky Licker — гармония анатомии, окраса и характера</p>
+            <p style="color: #999; font-style: italic; font-size: 1.1rem; margin-bottom: 40px;">Гордость питомника Sky Licker — гармония анатомии, окраса и характера</p>
 
             <div class="dogs-grid">
                 
