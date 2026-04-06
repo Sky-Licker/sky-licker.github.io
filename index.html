@@ -11,14 +11,13 @@
             padding: 0;
             width: 100%;
             min-height: 100%;
-            /* Базовый глубокий цвет */
-            background-color: #111111; 
+            background-color: #111111; /* Глубокий базовый цвет */
             font-family: "Georgia", "Times New Roman", "Songti SC", "STSong", "SimSun", serif;
             scroll-behavior: smooth;
             color: #e0e0e0; 
         }
 
-        /* --- ГЛАВНЫЙ ЭКРАН (ТЕМНЫЙ ЛЮКС СО СТАТУЕЙ) --- */
+        /* --- 1. ГЛАВНЫЙ ЭКРАН (НЕ МЕНЯЕМ) --- */
         .hero-section {
             position: relative;
             width: 100%;
@@ -27,17 +26,18 @@
             align-items: center;
             justify-content: center;
             background-color: #111;
-            /* ПРОВЕРЕНО И ИСПРАВЛЕНО: Ссылка на вашу темную текстуру */
-            background-image: url('texture-bg.jpg');
+            /* Ваша изначальная картинка со статуей */
+            background-image: url('bg-hero.jpg'); 
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
             padding: 20px;
             box-sizing: border-box;
-            border-bottom: 1px solid #d4af37; /* Тонкая золотая граница снизу */
+            border-bottom: 2px solid #d4af37; /* Тонкая золотая граница снизу */
         }
 
         .hero-overlay {
+            /* Убираем фоны, делаем полностью прозрачным */
             background: transparent; 
             padding: 20px;
             text-align: center;
@@ -45,6 +45,7 @@
             width: 100%;
         }
 
+        /* Белоснежный текст с кинематографичной тенью */
         .brand-name {
             font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
             font-size: clamp(2.5rem, 8vw, 4.2rem);
@@ -105,17 +106,17 @@
             color: #d4af37;
         }
 
-        /* --- ОБЩИЙ СТИЛЬ ТЕКСТУРИРОВАННЫХ СЕКЦИЙ --- */
+        /* --- ОБЩИЙ СТИЛЬ НИЖНИХ ТЕКСТУРИРОВАННЫХ СЕКЦИЙ --- */
         .textured-bg {
-            /* --- ИСПРАВЛЕНО: ТЕКСТУРА МРАМОРА С ЛАЗУРИТОМ --- */
-            background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.9) 0%, rgba(26, 26, 26, 0.95) 100%), url('texture-bg.jpg');
+            /* --- ТЕКСТУРА МРАМОРА С ЛАЗУРИТОМ (ОСТАВЛЯЕМ ТУТ) --- */
+            background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.8) 0%, rgba(26, 26, 26, 0.95) 100%), url('texture-bg.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed; /* Эффект параллакса при скролле */
         }
 
-        /* --- БЛОК О НАС --- */
+        /* --- 2. БЛОК О НАС (DARK LUXURY + TEXTURE) --- */
         .about-section {
             padding: 120px 20px;
             text-align: center;
@@ -195,7 +196,7 @@
             border: 2px solid #222;
         }
 
-        /* --- БЛОК НАШИ СОБАКИ --- */
+        /* --- 3. БЛОК НАШИ СОБАКИ (ГАЛЕРЕЯ + TEXTURE) --- */
         .dogs-section {
             padding: 120px 20px;
             text-align: center;
@@ -242,7 +243,7 @@
         }
 
         .dog-name {
-            font-family: "Palatino Linotype", serif;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
             font-size: 2rem;
             margin: 0 0 12px 0;
             color: #ffffff;
@@ -269,12 +270,12 @@
 
         /* --- АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ --- */
         @media (max-width: 600px) {
-            .textured-bg { background-attachment: scroll; }
             .hero-overlay { padding: 10px; }
             .brand-name { font-size: 2.3rem; }
             .legend-motto { font-size: 1.1rem; }
             .hero-nav { gap: 15px; }
             .hero-nav a { font-size: 0.8rem; display: block; width: 100%; margin: 5px 0; }
+            .textured-bg { background-attachment: scroll; }
             .about-section, .dogs-section { padding: 80px 15px; }
             .section-title { font-size: 2rem; }
             .about-intro, .about-text, .dog-desc { text-align: left; }
@@ -292,7 +293,7 @@
             
             <p class="legend-motto">Легенда, коснувшаяся неба: Древние стражи с лазурным сердцем.</p>
             <p class="legend-motto" style="font-style: normal;">A legend that touched the sky: Ancient guardians with an azure heart.</p>
-            <p class="legend-motto" style="font-style: normal;">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
+            <p class="legend-motto" style="font-style: normal; font-family: sans-serif;">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
             
             <nav class="hero-nav">
                 <a href="#">Main</a>
