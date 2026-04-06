@@ -18,7 +18,7 @@
             color: #e0e0e0; 
         }
 
-        /* --- ГЛАВНЫЙ ЭКРАН --- */
+        /* --- ГЛАВНЫЙ ЭКРАН (ТЕМНЫЙ ЛЮКС СО СТАТУЕЙ) --- */
         .hero-section {
             position: relative;
             width: 100%;
@@ -27,13 +27,14 @@
             align-items: center;
             justify-content: center;
             background-color: #111;
-            background-image: url('bg-hero.jpg');
+            /* ПРОВЕРЕНО И ИСПРАВЛЕНО: Ссылка на вашу темную текстуру */
+            background-image: url('texture-bg.jpg');
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
             padding: 20px;
             box-sizing: border-box;
-            border-bottom: 2px solid #d4af37; /* Тонкая золотая граница снизу */
+            border-bottom: 1px solid #d4af37; /* Тонкая золотая граница снизу */
         }
 
         .hero-overlay {
@@ -106,15 +107,15 @@
 
         /* --- ОБЩИЙ СТИЛЬ ТЕКСТУРИРОВАННЫХ СЕКЦИЙ --- */
         .textured-bg {
-            /* --- НОВОЕ: ИНТЕГРАЦИЯ ТЕКСТУРЫ МРАМОРА --- */
+            /* --- ИСПРАВЛЕНО: ТЕКСТУРА МРАМОРА С ЛАЗУРИТОМ --- */
             background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.9) 0%, rgba(26, 26, 26, 0.95) 100%), url('texture-bg.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            background-attachment: fixed; /* Эффект параллакса: текстура стоит, пока сайт скроллится */
+            background-attachment: fixed; /* Эффект параллакса при скролле */
         }
 
-        /* --- БЛОК О НАС (DARK LUXURY + TEXTURE) --- */
+        /* --- БЛОК О НАС --- */
         .about-section {
             padding: 120px 20px;
             text-align: center;
@@ -141,7 +142,7 @@
             border-left: 3px solid #d4af37;
             padding-left: 25px;
             text-align: left;
-            font-weight: normal;
+            font-weight: bold;
         }
 
         .about-text {
@@ -163,14 +164,14 @@
         .feature-box {
             flex: 1;
             min-width: 280px;
-            background-color: rgba(31, 31, 31, 0.85); /* Полупрозрачный фон для текстуры */
+            background-color: rgba(31, 31, 31, 0.8); /* Полупрозрачный фон */
             padding: 30px;
             border-radius: 4px;
             border: 1px solid #333; 
             border-top: 3px solid #d4af37; 
             text-align: left;
             box-shadow: 0 15px 30px rgba(0,0,0,0.6);
-            backdrop-filter: blur(5px); /* Легкое размытие под коробкой */
+            backdrop-filter: blur(5px);
         }
 
         .feature-title {
@@ -194,7 +195,7 @@
             border: 2px solid #222;
         }
 
-        /* --- БЛОК НАШИ СОБАКИ (ГАЛЕРЕЯ + TEXTURE) --- */
+        /* --- БЛОК НАШИ СОБАКИ --- */
         .dogs-section {
             padding: 120px 20px;
             text-align: center;
@@ -213,18 +214,18 @@
         }
 
         .dog-card {
-            background: #1a1a1a;
-            border: 1px solid rgba(212, 175, 55, 0.3); /* Приглушенная золотая рамка */
+            background: rgba(26, 26, 26, 0.85); /* Полупрозрачный фон */
+            border: 1px solid rgba(212, 175, 55, 0.3); 
             border-radius: 4px;
             overflow: hidden; 
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-            transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+            transition: all 0.4s ease;
         }
 
         .dog-card:hover {
             transform: translateY(-15px);
             box-shadow: 0 25px 60px rgba(212, 175, 55, 0.2); 
-            border: 1px solid rgba(212, 175, 55, 0.8); /* Рамка становится ярче при наведении */
+            border: 1px solid rgba(212, 175, 55, 0.8);
         }
 
         .dog-img {
@@ -237,12 +238,11 @@
 
         .dog-info-wrapper {
             padding: 30px 25px;
-            /* Градиент в инфо-блоке для глубины */
             background: linear-gradient(180deg, rgba(31, 31, 31, 0.6) 0%, rgba(17, 17, 17, 0.9) 100%);
         }
 
         .dog-name {
-            font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
+            font-family: "Palatino Linotype", serif;
             font-size: 2rem;
             margin: 0 0 12px 0;
             color: #ffffff;
@@ -269,7 +269,7 @@
 
         /* --- АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ --- */
         @media (max-width: 600px) {
-            .textured-bg { background-attachment: scroll; } /* Отключаем параллакс на мобильных для скорости */
+            .textured-bg { background-attachment: scroll; }
             .hero-overlay { padding: 10px; }
             .brand-name { font-size: 2.3rem; }
             .legend-motto { font-size: 1.1rem; }
@@ -277,7 +277,7 @@
             .hero-nav a { font-size: 0.8rem; display: block; width: 100%; margin: 5px 0; }
             .about-section, .dogs-section { padding: 80px 15px; }
             .section-title { font-size: 2rem; }
-            .about-intro, .about-text, .dog-desc { text-align: left; hyphens: auto; -webkit-hyphens: auto; }
+            .about-intro, .about-text, .dog-desc { text-align: left; }
             .dog-img { height: 340px; }
         }
     </style>
@@ -292,7 +292,7 @@
             
             <p class="legend-motto">Легенда, коснувшаяся неба: Древние стражи с лазурным сердцем.</p>
             <p class="legend-motto" style="font-style: normal;">A legend that touched the sky: Ancient guardians with an azure heart.</p>
-            <p class="legend-motto" style="font-style: normal; font-family: sans-serif;">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
+            <p class="legend-motto" style="font-style: normal;">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
             
             <nav class="hero-nav">
                 <a href="#">Main</a>
