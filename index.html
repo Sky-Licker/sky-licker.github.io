@@ -8,142 +8,130 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
     
     <style>
-        /* СБРОС СТИЛЕЙ */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
-            /* Использование min-height: 100% более надежно, чем фиксированная высота */
             min-height: 100%;
-            background-color: #fffdfa; /* Кремовый фон для всего сайта */
-            /* Основной шрифт сайта (более читаемый, чем стандартный) */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            /* Темный фон по умолчанию, чтобы текст был виден, если фото пропадет */
+            background-color: #1a1a1a; 
+            font-family: "Playfair Display", serif;
             color: #1a1a1a;
-            line-height: 1.6;
         }
 
-        /* 1. БЛОК HERO (Верхний экран с фоном) */
         .hero-section {
             position: relative;
             width: 100%;
-            /* Использование vh для фонового изображения на весь экран */
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-            
-            /* --- ИНТЕГРАЦИЯ ВАШЕГО ФОТО --- */
-            /* Назовите фото hero-bg.png. PNG гарантирует резкость золотых линий. */
-            background-image: url('hero-bg.png'); 
-            background-size: cover; /* Изображение растягивается, заполняя пространство */
-            background-position: center; /* Центр фото всегда в центре экрана */
-            background-repeat: no-repeat;
+            /* Проверьте название файла ниже! Оно должно быть точно таким на GitHub */
+            background: #1a1a1a url('hero-bg.png') no-repeat center center;
+            background-size: cover;
         }
 
-        /* ТЕКСТОВЫЙ ОВЕРЛЕЙ (Полупрозрачная подложка) */
         .hero-overlay {
             position: relative;
             z-index: 2;
-            background: rgba(255, 253, 250, 0.7); /* Кремовый фон с 70% прозрачности */
-            
-            /* ИСПРАВЛЕНИЕ: Добавлены префиксы для совместимости с Safari/iPhone */
-            -webkit-backdrop-filter: blur(8px); /* Для старых версий Safari */
-            backdrop-filter: blur(8px); /* Легкое размытие фона для стиля 'люкс' */
-            
-            padding: 50px 70px;
-            border: 2px solid rgba(184, 134, 11, 0.3); /* Тонкая золотая кайма */
+            /* Светлая подложка с размытием */
+            background: rgba(255, 255, 255, 0.85); 
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border: 1px solid #d4af37;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 850px;
-            box-sizing: border-box; /* Гарантирует, что отступы не увеличивают размер блока */
+            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+            max-width: 90% ;
+            width: 600px;
         }
 
-        /* СТИЛИЗАЦИЯ ТЕКСТА */
         .brand-name {
-            /* ИСПРАВЛЕНИЕ: Гарантированное применение шрифта Cinzel */
-            font-family: 'Cinzel', serif; 
-            font-size: clamp(2rem, 8vw, 3.8rem); /* Адаптивный размер шрифта */
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 6vw, 3rem);
+            letter-spacing: 0.2em;
             margin: 0;
             color: #111;
-            line-height: 1.2;
         }
 
         .breed-title {
-            /* ИСПРАВЛЕНИЕ: Гарантированное применение шрифта Playfair Display */
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(1rem, 3vw, 1.2rem);
-            font-style: italic;
-            color: #b8860b; /* Золотой цвет, подходящий к эмблеме */
+            font-size: 1rem;
+            color: #b8860b;
             text-transform: uppercase;
-            letter-spacing: 0.6em;
-            margin: 15px 0 35px 0;
-            font-weight: 500;
+            letter-spacing: 0.5em;
+            margin: 10px 0 20px 0;
         }
 
         .gold-divider {
-            width: 70px;
+            width: 50px;
             height: 1px;
-            background-color: #d4af37; /* Классический золотой */
-            margin: 0 auto 35px auto;
+            background-color: #d4af37;
+            margin: 20px auto;
         }
 
         .legend-motto {
-            /* ИСПРАВЛЕНИЕ: Применение шрифта Playfair Display для русского/китайского */
-            font-family: 'Playfair Display', serif; 
-            font-size: 1rem;
-            color: #444;
-            line-height: 1.8;
-            margin: 12px 0;
-            letter-spacing: 0.5px;
-            font-weight: 400;
+            font-size: 0.9rem;
+            color: #333;
+            margin: 5px 0;
+            line-height: 1.5;
         }
 
-        /* НАВИГАЦИЯ */
         .hero-nav {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 45px;
-            border-top: 1px solid rgba(184, 134, 11, 0.2);
-            padding-top: 25px;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
+
         .hero-nav a {
             text-decoration: none;
             color: #111;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 0.18em;
+            letter-spacing: 0.1em;
             font-weight: bold;
-            transition: color 0.3s ease, border-bottom 0.3s ease;
-            padding-bottom: 5px;
-            border-bottom: 2px solid transparent;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            transition: 0.3s;
         }
+
         .hero-nav a:hover {
-            color: #d4af37; /* Золотой при наведении */
-            border-bottom: 2px solid #d4af37; /* Элегантная золотая линия при наведении */
+            border-color: #d4af37;
+            color: #d4af37;
         }
 
-        /* 2. БЛОК О НАС (Для демонстрации скролла) */
         .about-section {
-            padding: 100px 20px;
-            background-color: #ffffff;
+            padding: 80px 20px;
+            background-color: #fffdfa;
             text-align: center;
-            color: #333;
         }
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.15rem;
-            line-height: 1.9;
-        }
+    </style>
+</head>
+<body>
 
-        /* МОБИЛЬНАЯ АДАПТАЦИЯ (ИСПРАВЛЕНИЯ) */
-        @media (max-width: 768px) {
-            .hero-section {
-                /* ИСПРАВЛЕНИЕ: Высота на телефоне более надежная */
-                height: 100%;
-                min-height: 100vh;
-                padding: 40px 15px; /* Увеличены отступы, чтобы блок не при
+    <header class="hero-section">
+        <div class="hero-overlay">
+            <h1 class="brand-name">SKY LOCKER</h1>
+            <p class="breed-title">Chow Chow</p>
+            <div class="gold-divider"></div>
+            <p class="legend-motto">Легенда, коснувшаяся неба</p>
+            <p class="legend-motto">A legend that touched the sky</p>
+            <p class="legend-motto">触碰天空的传奇</p>
+            <nav class="hero-nav">
+                <a href="#">Main</a>
+                <a href="#about">About</a>
+                <a href="#">Dogs</a>
+                <a href="#">Puppies</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <h2>О нашем питомнике</h2>
+        <p>Если вы видите этот текст, значит структура сайта работает исправно.</p>
+    </section>
+
+</body>
+</html>
