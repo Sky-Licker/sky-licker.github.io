@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky Locker — Питомник Чау-Чау и Американских Булли</title>
+    <title>Sky Locker — Chow Chow Kennel & American Bullies</title>
     <meta name="description" content="Профессиональное разведение чау-чау и американских булли. Фотографии, щенки и советы по уходу.">
     <meta name="keywords" content="чау-чау, chow chow, американские булли, щенки, питомник, собаководство">
 
     <style>
-        /* Используем системные шрифты, которые работают и в РФ, и в КНР */
+        /* Используем системные шрифты, которые работают везде */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
@@ -31,10 +31,28 @@
             color: #d4a373; /* Благородный золотистый цвет */
             text-transform: uppercase;
             letter-spacing: 2px;
+            line-height: 1.1; /* Чтобы надписи были ближе */
+        }
+
+        /* Стиль для новой надписи */
+        header p.main-breed {
+            margin: 0;
+            font-size: 1.4em;
+            color: #bc8a5f; /* Чуть темнее золотистого */
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        header p.welcome {
+            margin: 0;
+            color: #777;
+            font-size: 1em;
         }
 
         nav {
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         nav a {
@@ -42,6 +60,7 @@
             text-decoration: none;
             color: #666;
             font-weight: bold;
+            font-size: 0.95em;
         }
 
         .container {
@@ -57,6 +76,16 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             text-align: center;
             margin-bottom: 30px;
+        }
+
+        /* Стиль для фото в Hero блоке */
+        .hero img.main-photo {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            background-color: #ddd; /* Заглушка, если фото не загрузится */
         }
 
         .gallery {
@@ -76,7 +105,7 @@
             width: 100%;
             height: 250px;
             object-fit: cover;
-            background-color: #ddd; /* Заглушка, пока фото не загружено */
+            background-color: #ddd; /* Заглушка, если фото не загрузится */
         }
 
         .card-content {
@@ -108,6 +137,7 @@
         /* Адаптивность для мобильных */
         @media (max-width: 600px) {
             h1 { font-size: 1.8em; }
+            header p.main-breed { font-size: 1.1em; letter-spacing: 2px; }
             nav a { display: block; margin: 10px 0; }
         }
     </style>
@@ -115,9 +145,8 @@
 <body>
 
 <header>
-    <h1>Sky Locker</h1>
-    <h1>Chow Chow</h1>
-    <p>Добро пожаловать в мир верности и красоты</p>
+    <h1>SKY LOCKER</h1>
+    <p class="main-breed">Chow Chow</p> <p class="welcome">Добро пожаловать в мир верности и красоты</p>
     <nav>
         <a href="#">Главная</a>
         <a href="#">О нас</a>
@@ -129,6 +158,8 @@
 
 <div class="container">
     <div class="hero">
+        <img src="chow_main.jpg" alt="Чау-Чау на главном фото" class="main-photo">
+        
         <h2>Чау-Чау: Львы с синими языками</h2>
         <p>Мы занимаемся профессиональным разведением и заботой о породе Чау-Чау. Каждая наша собака — это член семьи, окруженный любовью и вниманием.</p>
         <a href="#contact" class="contact-btn">Задать вопрос</a>
@@ -136,17 +167,17 @@
 
     <div class="gallery">
         <div class="card">
-            <img src="https://via.placeholder.com/400x300?text=Chow+Chow+1" alt="Чау-Чау">
+            <img src="https://via.placeholder.com/400x300?text=Champions" alt="Наши чемпионы">
             <div class="card-content">
                 <h3>Наши чемпионы</h3>
-                <p>Здесь вы можете разместить фотографии ваших лучших собак.</p>
+                <p>Здесь вы можете разместить фотографии ваших лучших собак, их награды и титулы.</p>
             </div>
         </div>
         <div class="card">
-            <img src="https://via.placeholder.com/400x300?text=Puppy+Chow" alt="Щенки">
+            <img src="puppies.jpg" alt="Щенки Чау-Чау">
             <div class="card-content">
                 <h3>Доступные щенки</h3>
-                <p>Информация о текущих пометах и бронировании.</p>
+                <p>Информация о текущих пометах, свободных щенках и условиях бронирования.</p>
             </div>
         </div>
     </div>
@@ -154,7 +185,7 @@
 
 <footer id="contact">
     <p>&copy; 2026 Sky Locker Kennel. Все права защищены.</p>
-    <p>Свяжитесь с нами через мессенджеры или социальные сети.</p>
+    <p>Свяжитесь с нами через мессенджеры или социальные сети для консультации.</p>
 </footer>
 
 </body>
