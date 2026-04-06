@@ -5,196 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SKY LOCKER — Premium Chow Chow Kennel</title>
     <style>
-        /* ПАЛИТРА: Слоновая кость, глубокий золотой и угольный черный */
         :root {
-            --gold: #b8860b; /* Темное золото */
-            --light-gold: #d4a373;
-            --bg-cream: #fffdfa; /* Дорогой белый/кремовый */
+            --gold: #b8860b;
             --text-dark: #1a1a1a;
         }
 
         body {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-cream);
-            color: var(--text-dark);
-            /* Системный стек шрифтов: Georgia выглядит очень дорого и есть везде */
+            /* Основной шрифт для всего мира и Китая */
             font-family: "Georgia", "Times New Roman", serif;
-            line-height: 1.8;
-        }
-
-        header {
-            padding: 80px 20px;
-            text-align: center;
-            background-color: white;
-            border-bottom: 1px solid #f0e6d2;
-        }
-
-        /* ГЛАВНЫЙ ЗАГОЛОВОК */
-        .brand-name {
-            font-size: clamp(2.5rem, 8vw, 4.5rem); /* Адаптивный размер */
-            font-weight: 400;
+            background-color: #fffdfa;
             color: var(--text-dark);
-            text-transform: uppercase;
-            letter-spacing: 0.25em; /* Большой разнос букв = люкс */
-            margin: 0;
-            line-height: 1;
         }
 
-        /* ПОДЗАГОЛОВОК ПОРОДЫ */
-        .breed-name {
-            font-size: 1.2rem;
-            color: var(--gold);
+        /* ВЕРХНЯЯ ЧАСТЬ С ФОНОМ */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* Путь к вашему загруженному фото */
+            background: url('bg-hero.jpg') no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ПОЛУПРОЗРАЧНЫЙ БЛОК ДЛЯ ТЕКСТА (Эффект дорогого стекла) */
+        .content-overlay {
+            background: rgba(255, 253, 250, 0.85); /* Кремовый фон с прозрачностью */
+            backdrop-filter: blur(10px); /* Размытие фона за текстом - очень современно */
+            padding: 50px 30px;
+            border-radius: 2px;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .brand-name {
+            font-size: clamp(2rem, 8vw, 4rem);
+            letter-spacing: 0.3em;
             text-transform: uppercase;
-            letter-spacing: 0.6em;
-            margin: 20px 0 40px 0;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .breed-name {
+            font-size: 1.1rem;
+            color: var(--gold);
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            margin: 15px 0 30px 0;
             font-weight: 300;
         }
 
-        /* РАЗДЕЛИТЕЛЬ */
-        .gold-divider {
-            width: 60px;
+        .divider {
+            width: 50px;
             height: 1px;
-            background-color: var(--gold);
-            margin: 0 auto 40px auto;
-        }
-
-        /* БЛОК ЛЕГЕНДЫ */
-        .legend-box {
-            max-width: 800px;
-            margin: 0 auto;
+            background: var(--gold);
+            margin: 0 auto 30px auto;
         }
 
         .legend-text {
-            margin: 10px 0;
             font-style: italic;
             font-size: 1.1rem;
-            color: #555;
+            color: #444;
+            margin: 10px 0;
+            line-height: 1.6;
         }
 
-        /* КИТАЙСКИЙ ШРИФТ: используем встроенные в Windows/Mac китайские шрифты */
         .legend-cn {
             font-style: normal;
             font-size: 1.3rem;
-            color: var(--text-dark);
-            margin-top: 15px;
+            margin-top: 20px;
             letter-spacing: 0.1em;
-            /* Стек для Китая: SimSun или Songti выглядят как каллиграфия */
+            /* Безопасные китайские шрифты для КНР */
             font-family: "STSong", "SimSun", "Songti SC", serif;
         }
 
+        /* НАВИГАЦИЯ */
         nav {
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
         nav a {
-            margin: 0 20px;
+            display: inline-block;
+            margin: 10px 15px;
             text-decoration: none;
             color: var(--text-dark);
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            transition: color 0.3s;
-            border-bottom: 1px solid transparent;
-            padding-bottom: 5px;
+            transition: 0.3s;
         }
 
         nav a:hover {
             color: var(--gold);
-            border-bottom: 1px solid var(--gold);
         }
 
-        /* КОНТЕНТ */
-        .main-content {
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .hero-image-container {
-            position: relative;
-            margin-bottom: 50px;
-        }
-
-        .hero-image-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 2px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.07);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            letter-spacing: 0.1em;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            background-color: var(--text-dark);
-            color: white;
-            padding: 18px 45px;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 0.8rem;
-            margin-top: 30px;
-            transition: all 0.3s;
-        }
-
-        .contact-btn:hover {
-            background-color: var(--gold);
-        }
-
-        @media (max-width: 768px) {
-            .brand-name { font-size: 2.2rem; }
-            .breed-name { letter-spacing: 0.3em; font-size: 1rem; }
-            nav a { display: block; margin: 15px 0; }
-            header { padding: 40px 20px; }
+        @media (max-width: 600px) {
+            .content-overlay { padding: 30px 15px; }
+            nav a { display: block; margin: 10px 0; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1 class="brand-name">SKY LOCKER</h1>
-    <p class="breed-name">CHOW CHOW</p>
-    
-    <div class="gold-divider"></div>
+    <section class="hero-section">
+        <div class="content-overlay">
+            <h1 class="brand-name">SKY LOCKER</h1>
+            <p class="breed-name">Chow Chow</p>
+            
+            <div class="divider"></div>
 
-    <div class="legend-box">
-        <p class="legend-text">Легенда, коснувшаяся неба: Древние стражи с лазурным сердцем.</p>
-        <p class="legend-text">A legend that touched the sky: Ancient guardians with an azure heart.</p>
-        <p class="legend-cn">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
-    </div>
+            <p class="legend-text">Легенда, коснувшаяся неба: Древние стражи с лазурным сердцем.</p>
+            <p class="legend-text">A legend that touched the sky: Ancient guardians with an azure heart.</p>
+            <p class="legend-cn">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
 
-    <nav>
-        <a href="#">Main</a>
-        <a href="#">About</a>
-        <a href="#">Our Dogs</a>
-        <a href="#">Puppies</a>
-        <a href="#">Contact</a>
-    </nav>
-</header>
-
-<div class="main-content">
-    <div class="hero-image-container" style="text-align:center;">
-        <img src="chow_main.jpg" alt="Exquisite Chow Chow">
-        
-        <div style="margin-top: 40px;">
-            <h2 class="section-title">The Art of Breeding</h2>
-            <p style="max-width: 600px; margin: 0 auto; color: #555;">
-                В Sky Locker мы не просто разводим собак. Мы сохраняем живую историю и величие породы Чау-Чау для тех, кто ценит истинное совершенство.
-            </p>
-            <a href="https://wa.me/ВАШ_НОМЕР" class="contact-btn">WhatsApp Inquiry</a>
+            <nav>
+                <a href="#main">Main</a>
+                <a href="#about">About</a>
+                <a href="#dogs">Our Dogs</a>
+                <a href="#puppies">Puppies</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
-    </div>
-</div>
-
-<footer style="text-align: center; padding: 60px; color: #aaa; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;">
-    &copy; 2026 SKY LOCKER | International Chow Chow Kennel
-</footer>
+    </section>
 
 </body>
 </html>
