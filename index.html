@@ -4,136 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SKY LOCKER — Premium Chow Chow Kennel</title>
+    
     <style>
-        :root {
-            --gold: #b8860b;
-            --text-dark: #1a1a1a;
-        }
-
-        body {
+        /* ЧИСТЫЙ CSS ДЛЯ ГАРАНТИРОВАННОГО ПОЯВЛЕНИЯ ФОТО */
+        
+        /* 1. Настройка всего экрана */
+        html, body {
             margin: 0;
             padding: 0;
-            /* Основной шрифт для всего мира и Китая */
-            font-family: "Georgia", "Times New Roman", serif;
-            background-color: #fffdfa;
-            color: var(--text-dark);
+            height: 100%;
         }
 
-        /* ВЕРХНЯЯ ЧАСТЬ С ФОНОМ */
-        .hero-section {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            /* Путь к вашему загруженному фото */
-            background: url('bg-hero.jpg') no-repeat center center;
+        /* 2. Настройка фона всего сайта */
+        body {
+            /* Путь к вашему файлу (должен называться bg-hero.jpg) */
+            background: url('bg-hero.jpg') no-repeat center center fixed;
             background-size: cover;
-            text-align: center;
+            -webkit-background-size: cover; /* для старых браузеров */
+            
+            /* Новые дорогие шрифты под фото (Georgia/Times) */
+            font-family: "Georgia", "Times New Roman", serif;
+            color: #1a1a1a;
+            line-height: 1.8;
+        }
+
+        /* 3. Центрирующий контейнер для наложения */
+        .page-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             padding: 20px;
         }
 
-        /* ПОЛУПРОЗРАЧНЫЙ БЛОК ДЛЯ ТЕКСТА (Эффект дорогого стекла) */
+        /* 4. Полупрозрачный текстовый блок (подложка "облако") */
         .content-overlay {
-            background: rgba(255, 253, 250, 0.85); /* Кремовый фон с прозрачностью */
-            backdrop-filter: blur(10px); /* Размытие фона за текстом - очень современно */
-            padding: 50px 30px;
-            border-radius: 2px;
+            background-color: rgba(255, 253, 250, 0.85); /* Кремовый с прозрачностью */
+            backdrop-filter: blur(10px); /* Эффект дорогого матового стекла */
+            padding: 60px 40px;
+            border-radius: 4px;
             max-width: 800px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 1px solid rgba(184, 134, 11, 0.2);
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            border: 1px solid rgba(184, 134, 11, 0.2); /* Тонкая золотая рамка */
         }
 
+        /* СТИЛИЗАЦИЯ ВАШЕГО ТЕКСТА ИЗ image_28.png */
+        
         .brand-name {
-            font-size: clamp(2rem, 8vw, 4rem);
-            letter-spacing: 0.3em;
+            font-size: 3.5rem;
+            font-weight: 400;
             text-transform: uppercase;
+            letter-spacing: 0.3em;
             margin: 0;
-            line-height: 1.2;
+            line-height: 1;
         }
 
         .breed-name {
-            font-size: 1.1rem;
-            color: var(--gold);
-            letter-spacing: 0.5em;
+            font-size: 1.2rem;
+            color: #b8860b; /* Золотой цвет для Chow Chow */
             text-transform: uppercase;
-            margin: 15px 0 30px 0;
-            font-weight: 300;
+            letter-spacing: 0.6em;
+            margin: 15px 0 40px 0;
         }
 
-        .divider {
-            width: 50px;
+        .gold-divider {
+            width: 60px;
             height: 1px;
-            background: var(--gold);
-            margin: 0 auto 30px auto;
+            background-color: #b8860b; /* Золотой цвет разделителя */
+            margin: 0 auto 40px auto;
         }
 
         .legend-text {
+            margin: 10px 0;
             font-style: italic;
             font-size: 1.1rem;
             color: #444;
-            margin: 10px 0;
-            line-height: 1.6;
         }
 
         .legend-cn {
             font-style: normal;
             font-size: 1.3rem;
-            margin-top: 20px;
+            color: #333;
+            margin-top: 15px;
             letter-spacing: 0.1em;
-            /* Безопасные китайские шрифты для КНР */
+            /* Шрифты SimSun/Songti для четкости в Китае */
             font-family: "STSong", "SimSun", "Songti SC", serif;
         }
 
-        /* НАВИГАЦИЯ */
+        /* НАВИГАЦИЯ (МЕНЮ) */
         nav {
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
         nav a {
-            display: inline-block;
-            margin: 10px 15px;
+            display: block; /* Стек для мобильных, как на image_28.png */
             text-decoration: none;
-            color: var(--text-dark);
+            color: #333;
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            transition: 0.3s;
+            margin: 15px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid transparent;
         }
 
         nav a:hover {
-            color: var(--gold);
+            color: #b8860b;
+            border-bottom: 1px solid #b8860b;
         }
 
-        @media (max-width: 600px) {
-            .content-overlay { padding: 30px 15px; }
-            nav a { display: block; margin: 10px 0; }
+        @media (max-width: 768px) {
+            .brand-name { font-size: 2.5rem; }
+            .content-overlay { padding: 40px 20px; }
+            nav a { font-size: 0.75rem; margin: 10px 0; }
         }
     </style>
 </head>
 <body>
 
-    <section class="hero-section">
+    <div class="page-container">
+        
         <div class="content-overlay">
+            
             <h1 class="brand-name">SKY LOCKER</h1>
             <p class="breed-name">Chow Chow</p>
             
-            <div class="divider"></div>
+            <div class="gold-divider"></div>
 
-            <p class="legend-text">Легенда, коснувшаяся неба: Древние стражи с лазурным сердцем.</p>
-            <p class="legend-text">A legend that touched the sky: Ancient guardians with an azure heart.</p>
-            <p class="legend-cn">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
+            <div class="legend-box">
+                <p class="legend-text">Легенда, коснувшаяся неба: Древние стражи с лазурным сердцем.</p>
+                <p class="legend-text">A legend that touched the sky: Ancient guardians with an azure heart.</p>
+                <p class="legend-cn">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
+            </div>
 
             <nav>
-                <a href="#main">Main</a>
-                <a href="#about">About</a>
-                <a href="#dogs">Our Dogs</a>
-                <a href="#puppies">Puppies</a>
-                <a href="#contact">Contact</a>
+                <a href="#">Main</a>
+                <a href="#">About</a>
+                <a href="#">Our Dogs</a>
+                <a href="#">Puppies</a>
+                <a href="#">Contact</a>
             </nav>
         </div>
-    </section>
+        
+    </div>
 
 </body>
 </html>
