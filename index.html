@@ -11,33 +11,35 @@
             padding: 0;
             width: 100%;
             min-height: 100%;
-            background-color: #111111; /* Глубокий базовый цвет */
+            background-color: #111111; /* Базовый глубокий цвет */
             font-family: "Georgia", "Times New Roman", "Songti SC", "STSong", "SimSun", serif;
             scroll-behavior: smooth;
             color: #e0e0e0; 
         }
 
-        /* --- 1. ГЛАВНЫЙ ЭКРАН (НЕ МЕНЯЕМ) --- */
+        /* --- 1. ГЛАВНЫЙ ЭКРАН (АВТОМАТИЧЕСКАЯ ОТЗЫВЧИВОСТЬ) --- */
         .hero-section {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: 100vh; /* Полная высота экрана */
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: #111;
             /* Ваша изначальная картинка со статуей */
             background-image: url('bg-hero.jpg'); 
-            background-position: center center;
+            
+            /* --- ГЛАВНЫЙ СЕКРЕТ КРАСИВОГО ФОНА НА ВСЕХ УСТРОЙСТВАХ --- */
+            background-size: cover; /* Картинка АВТОМАТИЧЕСКИ заполняет весь экран, не искажаясь */
+            background-position: center center; /* АВТОМАТИЧЕСКИ центрирует статую */
+            
             background-repeat: no-repeat;
-            background-size: cover;
             padding: 20px;
             box-sizing: border-box;
             border-bottom: 2px solid #d4af37; /* Тонкая золотая граница снизу */
         }
 
         .hero-overlay {
-            /* Убираем фоны, делаем полностью прозрачным */
             background: transparent; 
             padding: 20px;
             text-align: center;
@@ -108,15 +110,19 @@
 
         /* --- ОБЩИЙ СТИЛЬ НИЖНИХ ТЕКСТУРИРОВАННЫХ СЕКЦИЙ --- */
         .textured-bg {
-            /* --- ТЕКСТУРА МРАМОРА С ЛАЗУРИТОМ (ОСТАВЛЯЕМ ТУТ) --- */
-            background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.8) 0%, rgba(26, 26, 26, 0.95) 100%), url('texture-bg.jpg');
+            position: relative;
+            /* Плотный темный градиент поверх мрамора */
+            background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.9) 0%, rgba(20, 20, 20, 0.98) 100%), url('texture-bg.jpg');
             background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            background-repeat: repeat; /* Бесшовное повторение */
+            
+            /* --- АВТОМАТИЧЕСКАЯ НАСТРОЙКА ТЕКСТУРЫ ДЛЯ КОМПЬЮТЕРОВ --- */
+            background-size: 1200px; /* Фиксированный благородный масштаб для больших экранов */
+            
             background-attachment: fixed; /* Эффект параллакса при скролле */
         }
 
-        /* --- 2. БЛОК О НАС (DARK LUXURY + TEXTURE) --- */
+        /* --- 2. БЛОК О НАС (DARK LUXURY + ТЕКСТУРА) --- */
         .about-section {
             padding: 120px 20px;
             text-align: center;
@@ -165,7 +171,7 @@
         .feature-box {
             flex: 1;
             min-width: 280px;
-            background-color: rgba(31, 31, 31, 0.8); /* Полупрозрачный фон */
+            background-color: rgba(26, 26, 26, 0.85); 
             padding: 30px;
             border-radius: 4px;
             border: 1px solid #333; 
@@ -196,7 +202,7 @@
             border: 2px solid #222;
         }
 
-        /* --- 3. БЛОК НАШИ СОБАКИ (ГАЛЕРЕЯ + TEXTURE) --- */
+        /* --- 3. БЛОК НАШИ СОБАКИ (ГАЛЕРЕЯ + ТЕКСТУРА) --- */
         .dogs-section {
             padding: 120px 20px;
             text-align: center;
@@ -215,7 +221,7 @@
         }
 
         .dog-card {
-            background: rgba(26, 26, 26, 0.85); /* Полупрозрачный фон */
+            background: rgba(20, 20, 20, 0.9); 
             border: 1px solid rgba(212, 175, 55, 0.3); 
             border-radius: 4px;
             overflow: hidden; 
@@ -268,14 +274,26 @@
             margin: 0;
         }
 
-        /* --- АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ --- */
-        @media (max-width: 600px) {
+        /* --- АВАРИЙНЫЕ НАСТРОЙКИ ДЛЯ ТЕЛЕФОНОВ --- */
+        @media (max-width: 768px) {
+            .hero-section {
+                /* На телефоне確保 height correct */
+                height: 100vh;
+                background-position: center center;
+            }
             .hero-overlay { padding: 10px; }
             .brand-name { font-size: 2.3rem; }
+            .breed-title { font-size: 1.1rem; }
             .legend-motto { font-size: 1.1rem; }
-            .hero-nav { gap: 15px; }
+            .hero-nav { gap: 10px; }
             .hero-nav a { font-size: 0.8rem; display: block; width: 100%; margin: 5px 0; }
-            .textured-bg { background-attachment: scroll; }
+            
+            /* --- АВТОМАТИЧЕСКАЯ НАСТРОЙКА ТЕКСТУРЫ ДЛЯ ТЕЛЕФОНОВ --- */
+            .textured-bg { 
+                background-attachment: scroll; /* Отключаем параллакс на мобильных для скорости */
+                background-size: 800px; /* На телефоне узор мельче, чтобы прожилки были видны */
+            }
+            
             .about-section, .dogs-section { padding: 80px 15px; }
             .section-title { font-size: 2rem; }
             .about-intro, .about-text, .dog-desc { text-align: left; }
