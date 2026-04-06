@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKY LICKER - Premium Chow Chow Kennel</title>
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+            background-color: #111111; /* Базовый глубокий цвет */
+            font-family: "Georgia", "Times New Roman", "Songti SC", "STSong", "SimSun", serif;
+            scroll-behavior: smooth;
+            color: #e0e0e0; 
+        }
+
+        /* --- 1. ГЛАВНЫЙ ЭКРАН (АВТОМАТИЧЕСКАЯ ОТЗЫВЧИВОСТЬ) --- */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Полная высота экрана */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #111;
+            /* Ваша изначальная картинка со статуей */
+            background-image: url('bg-hero.jpg'); 
+            
+            /* --- ГЛАВНЫЙ СЕКРЕТ КРАСИВОГО ФОНА НА ВСЕХ УСТРОЙСТВАХ --- */
+            background-size: cover; /* Заполняет весь экран */
+            background-position: center 25%; /* Фокусировка на верхней части статуи */
+            
+            background-repeat: no-repeat;
+            padding: 20px;
+            box-sizing: border-box;
+            border-bottom: 2px solid #d4af37; /* Тонкая золотая граница снизу */
+        }
+
+        .hero-overlay {
+            background: transparent; 
+            padding: 20px;
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* Белоснежный текст с кинематографичной тенью */
+        .brand-name {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
+            font-size: clamp(2.5rem, 8vw, 4.2rem);
+            letter-spacing: 0.2em;
+            margin: 0;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+        }
+
+        .breed-title {
+            font-size: 1.4rem;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 0.5em;
+            margin: 15px 0 35px 0;
+            font-weight: bold;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+        }
+
+        .gold-divider {
+            width: 60px;
+            height: 2px;
+            background-color: #d4af37;
+            margin: 0 auto 35px auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .legend-motto {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin: 15px 0;
+            line-height: 1.6;
+            font-style: italic;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 1), 0 0 5px rgba(0,0,0,1);
+        }
+
+        .hero-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: bold;
+            transition: 0.3s;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+        }
+
+        .hero-nav a:hover {
+            color: #d4af37;
+        }
+
+        /* --- ОБЩИЙ СТИЛЬ НИЖНИХ ТЕКСТУРИРОВАННЫХ СЕКЦИЙ --- */
+        .textured-bg {
+            position: relative;
+            /* Плотный темный градиент поверх мрамора */
+            background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.9) 0%, rgba(20, 20, 20, 0.98) 100%), url('about234234.jpg');
+            background-position: center;
+            background-repeat: repeat; /* Бесшовное повторение */
+            
+            /* --- АВТОМАТИЧЕСКАЯ НАСТРОЙКА ТЕКСТУРЫ ДЛЯ КОМПЬЮТЕРОВ --- */
+            background-size: 1200px; /* Фиксированный благородный масштаб для больших экранов */
+            
+            background-attachment: fixed; /* Эффект параллакса при скролле */
+        }
+
+        /* --- 2. БЛОК О НАС (DARK LUXURY + ТЕКСТУРА) --- */
+        .about-section {
+            padding: 120px 20px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+            /* Фон для ПК */
+            background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.85) 0%, rgba(20, 20, 20, 0.95) 100%), url('about-bg-pc.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .about-container { max-width: 850px; margin: 0 auto; }
+
+        .section-title {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-intro {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #e0e0e0;
+            margin-bottom: 50px;
+            border-left: 3px solid #d4af37;
+            padding-left: 25px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .about-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #cccccc;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .about-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .feature-box {
+            flex: 1;
+            min-width: 280px;
+            background-color: rgba(20, 20, 20, 0.6); /* Прозрачный тёмный фон */
+            padding: 30px;
+            border-radius: 4px;
+            border: 2px solid #d4af37; /* Золотая обводка */
+            text-align: left;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6), 0 0 20px rgba(212, 175, 55, 0.2); /* Лёгкое золотое свечение */
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+        .feature-box:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7), 0 0 30px rgba(212, 175, 55, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .feature-title {
+            color: #d4af37;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .feature-text { font-size: 1rem; color: #bbb; line-height: 1.7; margin: 0; }
+        
+        .about-photo { 
+            width: 100%; 
+            max-width: 800px; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.9); 
+            margin-top: 30px; 
+            border: 2px solid #222;
+        }
+
+        /* --- 3. БЛОК НАШИ СОБАКИ (ГАЛЕРЕЯ + ТЕКСТУРА) --- */
+        .dogs-section {
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .dogs-container {
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        .dogs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .dog-card {
+            background: rgba(20, 20, 20, 0.9); 
+            border: 1px solid rgba(212, 175, 55, 0.3); 
+            border-radius: 4px;
+            overflow: hidden; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+            transition: all 0.4s ease;
+        }
+
+        .dog-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.2); 
+            border: 1px solid rgba(212, 175, 55, 0.8);
+        }
+
+        .dog-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover; 
+            object-position: top; 
+            border-bottom: 1px solid #222;
+        }
+
+        .dog-info-wrapper {
+            padding: 30px 25px;
+            background: linear-gradient(180deg, rgba(31, 31, 31, 0.6) 0%, rgba(17, 17, 17, 0.9) 100%);
+        }
+
+        .dog-name {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
+            font-size: 2rem;
+            margin: 0 0 12px 0;
+            color: #ffffff;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .dog-type {
+            font-size: 0.85rem;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .dog-desc {
+            font-size: 1.05rem;
+            color: #aaaaaa;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* --- RETINA DISPLAY SUPPORT --- */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .hero-section {
+                background-image: url('bg-hero@2x.jpg');
+            }
+            .textured-bg {
+                background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.9) 0%, rgba(20, 20, 20, 0.98) 100%), url('about234234@2x.jpg');
+            }
+            .about-section {
+                background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.85) 0%, rgba(20, 20, 20, 0.95) 100%), url('about-bg-pc@2x.jpg');
+            }
+        }
+
+        /* --- АВАРИЙНЫЕ НАСТРОЙКИ ДЛЯ ТЕЛЕФОНОВ --- */
+        @media (max-width: 768px) {
+            .hero-section {
+                /* На телефоне確保 height correct */
+                height: 100vh;
+                background-position: center top;
+                background-image: url('bg-hero-mobile.jpg');
+            }
+            /* Retina для мобильных */
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+                .hero-section {
+                    background-image: url('bg-hero-mobile@2x.jpg');
+                }
+            }
+            /* Фон для about на мобильных */
+            .about-section {
+                background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.85) 0%, rgba(20, 20, 20, 0.95) 100%), url('about-bg-mobile.jpg');
+                background-attachment: scroll;
+            }
+            /* Retina для about на мобильных */
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+                .about-section {
+                    background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.85) 0%, rgba(20, 20, 20, 0.95) 100%), url('about-bg-mobile@2x.jpg');
+                }
+            }
+            .hero-overlay { padding: 10px; }
+            .brand-name { font-size: 2.3rem; }
+            .breed-title { font-size: 1.1rem; }
+            .legend-motto { font-size: 1.1rem; }
+            .hero-nav { gap: 10px; }
+            .hero-nav a { font-size: 0.8rem; display: block; width: 100%; margin: 5px 0; }
+            
+            /* --- АВТОМАТИЧЕСКАЯ НАСТРОЙКА ТЕКСТУРЫ ДЛЯ ТЕЛЕФОНОВ --- */
+            .textured-bg { 
+                background-attachment: scroll; /* Отключаем параллакс на мобильных для скорости */
+                background-size: 800px; /* На телефоне узор мельче, чтобы прожилки были видны */
+            }
+            
+            .about-section, .dogs-section { padding: 80px 15px; }
+            .section-title { font-size: 2rem; }
+            .about-intro, .about-text, .dog-desc { text-align: left; }
+            .dog-img { height: 340px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="hero-overlay">
+            <h1 class="brand-name">SKY LICKER</h1>
+            <p class="breed-title">Chow Chow</p>
+            <div class="gold-divider"></div>
+            
+            <p class="legend-motto">Легенда, коснувшаяся неба: Древние стражи с лазурным сердцем.</p>
+            <p class="legend-motto" style="font-style: normal;">A legend that touched the sky: Ancient guardians with an azure heart.</p>
+            <p class="legend-motto" style="font-style: normal; font-family: sans-serif;">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
+            
+            <nav class="hero-nav">
+                <a href="#">Main</a>
+                <a href="#about">About</a>
+                <a href="#dogs">Dogs</a>
+                <a href="#puppies">Puppies</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="about-section textured-bg">
+        <div class="about-container">
+            
+            <h2 class="section-title">История Питомника</h2>
+            <div class="gold-divider" style="margin-bottom: 50px;"></div>
+            
+            <p class="about-intro">
+                За именем <strong>Sky Licker</strong> стоит более чем 10-летний опыт профессиональной кинологии. Моя работа с такими серьезными породами, как Американские стаффордширские терьеры и Питбули, заложила жесткие стандарты ответственности за каждую линию в родословной. 
+            </p>
+
+            <p class="about-text">
+                Покоренная спокойствием, красотой и невероятной статью Чау-Чау, я сделала эту породу центром своей вселенной. Наша цель — получение топовых производителей разных окрасов и типов шерсти, которые сочетают в себе безупречный экстерьер и стабильную психику.
+            </p>
+
+            <div class="about-features">
+                <div class="feature-box">
+                    <h3 class="feature-title">Здоровье и Генетика</h3>
+                    <p class="feature-text">Мы не идем на компромиссы. Все наши собаки проходят обязательные генетические тесты и имеют официальные снимки на отсутствие дисплазии.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <h3 class="feature-title">Жизнь в Семье</h3>
+                    <p class="feature-text">Наши Чау-Чау живут в загородном доме как полноправные члены семьи (одна из наших главных гордостей — потрясающая собака, ее зовут Марго). Щенки с первых дней растут в стае, получая идеальную социализацию.</p>
+                </div>
+            </div>
+
+            <p class="about-text" style="text-align: center; font-style: italic; color: #d4af37;">
+                Меня зовут <strong>Ирина</strong>, и я лично веду каждый этап: от планирования вязки до бережной отправки щенка в любую точку мира.
+            </p>
+            
+            <img src="about-bg.jpg" alt="Sky Licker Chow Chow" class="about-photo" loading="lazy">
+
+        </div>
+    </section>
+
+    <section id="dogs" class="dogs-section textured-bg">
+        <div class="dogs-container">
+            <h2 class="section-title">Наши Собаки</h2>
+            <div class="gold-divider"></div>
+            <p style="color: #999; font-style: italic; font-size: 1.1rem; margin-bottom: 50px;">Гордость питомника Sky Licker — гармония анатомии, окраса и характера</p>
+
+            <div class="dogs-grid">
+                
+                <div class="dog-card">
+                    <img src="dog1.jpg" srcset="dog1.jpg 1x, dog1@2x.jpg 2x" alt="Chow Chow Margo" class="dog-img" loading="lazy">
+                    <div class="dog-info-wrapper">
+                        <h3 class="dog-name">Марго</h3>
+                        <div class="dog-type">Кремовый окрас • Длинношерстная</div>
+                        <p class="dog-desc">Наша кремовая жемчужина. Воплощение нежности, грации и истинного достоинства классической Чау-Чау.</p>
+                    </div>
+                </div>
+
+                <div class="dog-card">
+                    <img src="dog2.jpg" srcset="dog2.jpg 1x, dog2@2x.jpg 2x" alt="Chow Chow Justin" class="dog-img" loading="lazy">
+                    <div class="dog-info-wrapper">
+                        <h3 class="dog-name">Юстин</h3>
+                        <div class="dog-type">Рыжий окрас • Смуф</div>
+                        <p class="dog-desc">Эффектный представитель короткошерстного типа. Обладает мощным костяком, безупречной анатомией и ярким темпераментом.</p>
+                    </div>
+                </div>
+
+                <div class="dog-card">
+                    <img src="dog3.jpg" srcset="dog3.jpg 1x, dog3@2x.jpg 2x" alt="Chow Chow Varya" class="dog-img" loading="lazy">
+                    <div class="dog-info-wrapper">
+                        <h3 class="dog-name">Варя</h3>
+                        <div class="dog-type">Черный окрас • Длинношерстная</div>
+                        <p class="dog-desc">Роскошная черная звезда нашего питомника. Глубокий, насыщенный окрас и выразительный взгляд, покоряющий с первой секунды.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
