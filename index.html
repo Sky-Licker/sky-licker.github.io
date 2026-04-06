@@ -13,13 +13,12 @@
             padding: 0;
             width: 100%;
             min-height: 100%;
-            background-color: #1a1a1a; 
+            background-color: #222; /* Темный фон-страховка */
             font-family: "Playfair Display", serif;
-            color: #1a1a1a;
             scroll-behavior: smooth;
         }
 
-        /* 1. ГЛАВНЫЙ ЭКРАН (ВОЗВРАЩАЕМ СТАРЫЙ ДИЗАЙН) */
+        /* 1. ГЛАВНЫЙ ЭКРАН СО СТАТУЕЙ */
         .hero-section {
             position: relative;
             width: 100%;
@@ -27,15 +26,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Возвращаем вашу картинку со статуей собаки */
-            background: #1a1a1a url('bg-hero.jpg') no-repeat center center;
+            /* ПРОВЕРЬТЕ: название файла должно быть bg-hero.jpg маленькими буквами */
+            background: #222 url('bg-hero.jpg') no-repeat center center;
             background-size: cover;
             padding: 20px;
             box-sizing: border-box;
         }
 
+        /* Прозрачный блок для текста */
         .hero-overlay {
-            /* Убираем белый фон, делаем полностью прозрачным */
             background: transparent; 
             padding: 20px;
             text-align: center;
@@ -43,20 +42,124 @@
             width: 100%;
         }
 
-        /* Белоснежный текст с темной кинематографичной тенью */
+        /* Белоснежный текст с тенью, как вы хотели */
         .brand-name {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-size: clamp(2.5rem, 8vw, 4.2rem);
             letter-spacing: 0.2em;
             margin: 0;
             color: #ffffff;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
         }
 
         .breed-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #d4af37;
             text-transform: uppercase;
             letter-spacing: 0.5em;
-            margin: 10px 0 30px 0;
+            margin: 15px 0 35px 0;
             font-weight: bold;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+        }
+
+        .gold-divider {
+            width: 60px;
+            height: 2px;
+            background-color: #d4af37;
+            margin: 0 auto 35px auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .legend-motto {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin: 15px 0;
+            line-height: 1.6;
+            font-style: italic;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 1), 0 0 5px rgba(0,0,0,1);
+        }
+
+        .hero-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: bold;
+            transition: 0.3s;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+        }
+
+        .hero-nav a:hover {
+            color: #d4af37;
+        }
+
+        /* 2. БЛОК О НАС */
+        .about-section {
+            padding: 100px 20px;
+            background-color: #fffdfa;
+            text-align: center;
+            color: #1a1a1a;
+        }
+        
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* МОБИЛЬНАЯ АДАПТАЦИЯ */
+        @media (max-width: 600px) {
+            .hero-overlay { padding: 10px; }
+            .brand-name { font-size: 2.3rem; }
+            .legend-motto { font-size: 1.1rem; }
+            .hero-nav { gap: 15px; }
+            .hero-nav a { font-size: 0.8rem; display: block; width: 100%; margin: 5px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="hero-overlay">
+            <h1 class="brand-name">SKY LOCKER</h1>
+            <p class="breed-title">Chow Chow</p>
+            <div class="gold-divider"></div>
+            
+            <p class="legend-motto">Легенда, коснувшаяся неба: Древние стражи с лазурным сердцем.</p>
+            <p class="legend-motto" style="font-style: normal;">A legend that touched the sky: Ancient guardians with an azure heart.</p>
+            <p class="legend-motto" style="font-style: normal; font-family: sans-serif;">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
+            
+            <nav class="hero-nav">
+                <a href="#">Main</a>
+                <a href="#about">About</a>
+                <a href="#dogs">Dogs</a>
+                <a href="#puppies">Puppies</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2 style="font-family: 'Cinzel', serif; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 0.3em;">Наследие и Мастерство</h2>
+            <div style="width: 50px; height: 2px; background-color: #d4af37; margin: 20px auto 40px auto;"></div>
+            
+            <p style="font-size: 1.15rem; line-height: 1.8; text-align: justify; border-left: 3px solid #d4af37; padding-left: 20px;">
+                Мы объединили 10-летний опыт работы с серьезными породами, чтобы создать <strong>Sky Locker</strong> — питомник, где качество жизни каждой собаки стоит на первом месте.
+            </p>
+            
+            <img src="about.jpg" alt="Sky Locker" style="width: 100%; max-width: 750px; margin-top: 40px; box-shadow: 20px 20px 0px #f0ece6;">
+        </div>
+    </section>
+
+</body>
+</html>
