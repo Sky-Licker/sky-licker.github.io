@@ -6,148 +6,79 @@
     <title>SKY LOCKER — Premium Chow Chow Kennel</title>
     
     <style>
-        /* ЧИСТЫЙ CSS ДЛЯ ГАРАНТИРОВАННОГО ПОЯВЛЕНИЯ ФОТО */
-        
-        /* 1. Настройка всего экрана */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
+            background-color: #000; /* Черный фон как база для глубины */
         }
 
-        /* 2. Настройка фона всего сайта */
         body {
-            /* Путь к вашему файлу (должен называться bg-hero.jpg) */
+            /* Ваше фото на весь экран */
             background: url('bg-hero.jpg') no-repeat center center fixed;
             background-size: cover;
-            -webkit-background-size: cover; /* для старых браузеров */
-            
-            /* Новые дорогие шрифты под фото (Georgia/Times) */
             font-family: "Georgia", "Times New Roman", serif;
             color: #1a1a1a;
-            line-height: 1.8;
+            line-height: 1.6;
         }
 
-        /* 3. Центрирующий контейнер для наложения */
+        /* КОНТЕЙНЕР ДЛЯ ВСЕГО САЙТА */
         .page-container {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            /* Легкий градиент поверх фото, чтобы текст был четким, а фото ярким */
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
         }
 
-        /* 4. Полупрозрачный текстовый блок (подложка "облако") */
+        /* ПРОЗРАЧНЫЙ ТЕКСТОВЫЙ БЛОК */
         .content-overlay {
-            background-color: rgba(255, 253, 250, 0.85); /* Кремовый с прозрачностью */
-            backdrop-filter: blur(10px); /* Эффект дорогого матового стекла */
-            padding: 60px 40px;
-            border-radius: 4px;
-            max-width: 800px;
+            /* Убираем плотный цвет, оставляем легкую дымку */
+            background-color: rgba(255, 253, 250, 0.15); 
+            backdrop-filter: blur(8px); /* Размытие фона делает текст читаемым, но не прячет фото */
+            -webkit-backdrop-filter: blur(8px);
+            
+            padding: 40px 20px;
+            border-radius: 2px;
+            max-width: 600px;
+            width: 90%;
             text-align: center;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
-            border: 1px solid rgba(184, 134, 11, 0.2); /* Тонкая золотая рамка */
+            
+            /* Тонкая, почти незаметная золотая кайма для стиля "люкс" */
+            border: 1px solid rgba(184, 134, 11, 0.3);
         }
 
-        /* СТИЛИЗАЦИЯ ВАШЕГО ТЕКСТА ИЗ image_28.png */
-        
+        /* ТЕКСТ С ЭФФЕКТОМ ЧИТАЕМОСТИ */
         .brand-name {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 10vw, 3.5rem);
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 0.3em;
             margin: 0;
-            line-height: 1;
+            line-height: 1.1;
+            /* Тень под текстом, чтобы он не терялся на светлых облаках */
+            text-shadow: 0px 2px 4px rgba(255,255,255,0.8);
         }
 
         .breed-name {
-            font-size: 1.2rem;
-            color: #b8860b; /* Золотой цвет для Chow Chow */
+            font-size: 1.1rem;
+            color: #b8860b;
             text-transform: uppercase;
-            letter-spacing: 0.6em;
-            margin: 15px 0 40px 0;
+            letter-spacing: 0.5em;
+            margin: 15px 0 30px 0;
+            font-weight: bold;
         }
 
         .gold-divider {
-            width: 60px;
+            width: 40px;
             height: 1px;
-            background-color: #b8860b; /* Золотой цвет разделителя */
-            margin: 0 auto 40px auto;
+            background-color: #b8860b;
+            margin: 0 auto 30px auto;
         }
 
         .legend-text {
             margin: 10px 0;
             font-style: italic;
-            font-size: 1.1rem;
-            color: #444;
-        }
-
-        .legend-cn {
-            font-style: normal;
-            font-size: 1.3rem;
-            color: #333;
-            margin-top: 15px;
-            letter-spacing: 0.1em;
-            /* Шрифты SimSun/Songti для четкости в Китае */
-            font-family: "STSong", "SimSun", "Songti SC", serif;
-        }
-
-        /* НАВИГАЦИЯ (МЕНЮ) */
-        nav {
-            margin-top: 50px;
-        }
-
-        nav a {
-            display: block; /* Стек для мобильных, как на image_28.png */
-            text-decoration: none;
-            color: #333;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            margin: 15px 0;
-            padding-bottom: 5px;
-            border-bottom: 1px solid transparent;
-        }
-
-        nav a:hover {
-            color: #b8860b;
-            border-bottom: 1px solid #b8860b;
-        }
-
-        @media (max-width: 768px) {
-            .brand-name { font-size: 2.5rem; }
-            .content-overlay { padding: 40px 20px; }
-            nav a { font-size: 0.75rem; margin: 10px 0; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="page-container">
-        
-        <div class="content-overlay">
-            
-            <h1 class="brand-name">SKY LOCKER</h1>
-            <p class="breed-name">Chow Chow</p>
-            
-            <div class="gold-divider"></div>
-
-            <div class="legend-box">
-                <p class="legend-text">Легенда, коснувшаяся неба: Древние стражи с лазурным сердцем.</p>
-                <p class="legend-text">A legend that touched the sky: Ancient guardians with an azure heart.</p>
-                <p class="legend-cn">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
-            </div>
-
-            <nav>
-                <a href="#">Main</a>
-                <a href="#">About</a>
-                <a href="#">Our Dogs</a>
-                <a href="#">Puppies</a>
-                <a href="#">Contact</a>
-            </nav>
-        </div>
-        
-    </div>
-
-</body>
-</html>
+            font-size: 1.05rem;
+            color: #
