@@ -6,79 +6,150 @@
     <title>SKY LOCKER — Premium Chow Chow Kennel</title>
     
     <style>
+        /* Сброс отступов для правильного растягивания */
         html, body {
             margin: 0;
             padding: 0;
+            width: 100%;
             height: 100%;
-            background-color: #000; /* Черный фон как база для глубины */
         }
 
-        body {
-            /* Ваше фото на весь экран */
-            background: url('bg-hero.jpg') no-repeat center center fixed;
-            background-size: cover;
-            font-family: "Georgia", "Times New Roman", serif;
-            color: #1a1a1a;
-            line-height: 1.6;
-        }
-
-        /* КОНТЕЙНЕР ДЛЯ ВСЕГО САЙТА */
-        .page-container {
+        /* 1. НАДЕЖНЫЙ КОНТЕЙНЕР ДЛЯ ФОНА */
+        .hero-bg {
+            position: relative;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            /* Легкий градиент поверх фото, чтобы текст был четким, а фото ярким */
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+            /* Убрано слово fixed, чтобы не ломать браузеры на телефонах */
+            background: url('bg-hero.jpg') no-repeat center center;
+            background-size: cover;
+            font-family: "Georgia", "Times New Roman", serif;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
-        /* ПРОЗРАЧНЫЙ ТЕКСТОВЫЙ БЛОК */
+        /* 2. ТЕКСТОВЫЙ БЛОК (Стеклянная подложка) */
         .content-overlay {
-            /* Убираем плотный цвет, оставляем легкую дымку */
-            background-color: rgba(255, 253, 250, 0.15); 
-            backdrop-filter: blur(8px); /* Размытие фона делает текст читаемым, но не прячет фото */
-            -webkit-backdrop-filter: blur(8px);
-            
+            background: rgba(255, 253, 250, 0.2); /* Легкая дымка */
+            backdrop-filter: blur(6px); /* Умеренное размытие */
+            -webkit-backdrop-filter: blur(6px); /* Поддержка для iPhone/Safari */
             padding: 40px 20px;
-            border-radius: 2px;
-            max-width: 600px;
-            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
             text-align: center;
-            
-            /* Тонкая, почти незаметная золотая кайма для стиля "люкс" */
-            border: 1px solid rgba(184, 134, 11, 0.3);
+            max-width: 650px;
+            width: 100%;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Легкая тень от блока */
         }
 
-        /* ТЕКСТ С ЭФФЕКТОМ ЧИТАЕМОСТИ */
+        /* 3. СТИЛИ ТЕКСТА */
         .brand-name {
-            font-size: clamp(2rem, 10vw, 3.5rem);
-            font-weight: 400;
+            font-size: clamp(2.2rem, 8vw, 3.5rem);
+            font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.2em;
             margin: 0;
-            line-height: 1.1;
-            /* Тень под текстом, чтобы он не терялся на светлых облаках */
-            text-shadow: 0px 2px 4px rgba(255,255,255,0.8);
+            color: #111;
+            /* Белое свечение вокруг букв для контраста */
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.9);
         }
 
         .breed-name {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #b8860b;
             text-transform: uppercase;
             letter-spacing: 0.5em;
-            margin: 15px 0 30px 0;
+            margin: 10px 0 30px 0;
             font-weight: bold;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
         }
 
         .gold-divider {
-            width: 40px;
-            height: 1px;
+            width: 50px;
+            height: 2px;
             background-color: #b8860b;
             margin: 0 auto 30px auto;
         }
 
         .legend-text {
-            margin: 10px 0;
+            margin: 12px 0;
             font-style: italic;
-            font-size: 1.05rem;
-            color: #
+            font-size: 1.1rem;
+            color: #111;
+            font-weight: 600;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+        }
+
+        .legend-cn {
+            font-style: normal;
+            font-size: 1.35rem;
+            color: #000;
+            margin-top: 25px;
+            letter-spacing: 0.1em;
+            font-family: "STSong", "SimSun", "Songti SC", serif;
+            font-weight: bold;
+        }
+
+        /* 4. НАВИГАЦИЯ */
+        nav {
+            margin-top: 40px;
+        }
+
+        nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: #111;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin: 10px 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #b8860b;
+        }
+
+        /* 5. АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ */
+        @media (max-width: 600px) {
+            .content-overlay {
+                background: rgba(255, 253, 250, 0.35); /* На телефоне фон чуть плотнее, чтобы текст не сливался с небом */
+                padding: 30px 15px;
+            }
+            nav a { 
+                display: block; 
+                margin: 15px 0; 
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="hero-bg">
+        
+        <div class="content-overlay">
+            <h1 class="brand-name">SKY LOCKER</h1>
+            <p class="breed-name">Chow Chow</p>
+            
+            <div class="gold-divider"></div>
+
+            <div class="legend-box">
+                <p class="legend-text">Легенда, коснувшаяся неба: Древние стражи с лазурным сердцем.</p>
+                <p class="legend-text">A legend that touched the sky: Ancient guardians with an azure heart.</p>
+                <p class="legend-cn">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
+            </div>
+
+            <nav>
+                <a href="#">Main</a>
+                <a href="#">About</a>
+                <a href="#">Our Dogs</a>
+                <a href="#">Puppies</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+
+    </div>
+
+</body>
+</html>
