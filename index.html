@@ -1,108 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SKY LOCKER - Premium Chow Chow Kennel</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
     
     <style>
+        /* СБРОС СТИЛЕЙ */
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #fffdfa; /* Легкий кремовый фон для всего сайта */
+            width: 100%;
+            /* Использование min-height: 100% более надежно, чем фиксированная высота */
+            min-height: 100%;
+            background-color: #fffdfa; /* Кремовый фон для всего сайта */
+            /* Основной шрифт сайта (более читаемый, чем стандартный) */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
         }
 
         /* 1. БЛОК HERO (Верхний экран с фоном) */
         .hero-section {
             position: relative;
             width: 100%;
-            height: 100vh; /* Растягиваем на весь экран */
+            /* Использование vh для фонового изображения на весь экран */
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             
             /* --- ИНТЕГРАЦИЯ ВАШЕГО ФОТО --- */
-            background-image: url('hero-bg.png'); /* Путь к файлу. Назовите фото hero-bg.png */
-            background-size: cover; /* Важно: изображение растягивается, заполняя пространство */
-            background-position: center; /* Важно: центр фото всегда в центре экрана */
+            /* Назовите фото hero-bg.png. PNG гарантирует резкость золотых линий. */
+            background-image: url('hero-bg.png'); 
+            background-size: cover; /* Изображение растягивается, заполняя пространство */
+            background-position: center; /* Центр фото всегда в центре экрана */
             background-repeat: no-repeat;
         }
 
-        /* ТЕКСТОВЫЙ ОВЕРЛЕЙ (Полупрозрачная подложка для читаемости) */
+        /* ТЕКСТОВЫЙ ОВЕРЛЕЙ (Полупрозрачная подложка) */
         .hero-overlay {
             position: relative;
             z-index: 2;
             background: rgba(255, 253, 250, 0.7); /* Кремовый фон с 70% прозрачности */
-            padding: 40px 60px;
+            
+            /* ИСПРАВЛЕНИЕ: Добавлены префиксы для совместимости с Safari/iPhone */
+            -webkit-backdrop-filter: blur(8px); /* Для старых версий Safari */
+            backdrop-filter: blur(8px); /* Легкое размытие фона для стиля 'люкс' */
+            
+            padding: 50px 70px;
             border: 2px solid rgba(184, 134, 11, 0.3); /* Тонкая золотая кайма */
             text-align: center;
-            backdrop-filter: blur(5px); /* Легкое размытие фона за стеклом для стиля 'люкс' */
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
+            max-width: 850px;
+            box-sizing: border-box; /* Гарантирует, что отступы не увеличивают размер блока */
         }
 
         /* СТИЛИЗАЦИЯ ТЕКСТА */
         .brand-name {
-            font-family: 'Cinzel', serif; /* Премиальный заголовочный шрифт */
-            font-size: 3.5rem;
+            /* ИСПРАВЛЕНИЕ: Гарантированное применение шрифта Cinzel */
+            font-family: 'Cinzel', serif; 
+            font-size: clamp(2rem, 8vw, 3.8rem); /* Адаптивный размер шрифта */
             text-transform: uppercase;
             letter-spacing: 0.25em;
             margin: 0;
             color: #111;
+            line-height: 1.2;
         }
 
         .breed-title {
-            font-family: 'Playfair Display', serif; /* Итальянский курсив */
-            font-size: 1.1rem;
+            /* ИСПРАВЛЕНИЕ: Гарантированное применение шрифта Playfair Display */
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(1rem, 3vw, 1.2rem);
             font-style: italic;
             color: #b8860b; /* Золотой цвет, подходящий к эмблеме */
             text-transform: uppercase;
             letter-spacing: 0.6em;
-            margin: 10px 0 30px 0;
-            font-weight: bold;
+            margin: 15px 0 35px 0;
+            font-weight: 500;
         }
 
         .gold-divider {
-            width: 60px;
+            width: 70px;
             height: 1px;
             background-color: #d4af37; /* Классический золотой */
-            margin: 0 auto 30px auto;
+            margin: 0 auto 35px auto;
         }
 
         .legend-motto {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 0.95rem;
+            /* ИСПРАВЛЕНИЕ: Применение шрифта Playfair Display для русского/китайского */
+            font-family: 'Playfair Display', serif; 
+            font-size: 1rem;
             color: #444;
             line-height: 1.8;
-            margin: 10px 0;
-            letter-spacing: 1px;
+            margin: 12px 0;
+            letter-spacing: 0.5px;
+            font-weight: 400;
         }
 
         /* НАВИГАЦИЯ */
         .hero-nav {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-top: 40px;
+            gap: 30px;
+            margin-top: 45px;
             border-top: 1px solid rgba(184, 134, 11, 0.2);
-            padding-top: 20px;
+            padding-top: 25px;
         }
         .hero-nav a {
             text-decoration: none;
             color: #111;
             font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.18em;
             font-weight: bold;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
         }
         .hero-nav a:hover {
             color: #d4af37; /* Золотой при наведении */
+            border-bottom: 2px solid #d4af37; /* Элегантная золотая линия при наведении */
         }
 
         /* 2. БЛОК О НАС (Для демонстрации скролла) */
@@ -115,50 +136,14 @@
         .about-content {
             max-width: 800px;
             margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1.15rem;
+            line-height: 1.9;
         }
 
-        /* МОБИЛЬНАЯ АДАПТАЦИЯ */
-        @media (max-width: 600px) {
-            .hero-overlay { padding: 30px 20px; }
-            .brand-name { font-size: 2rem; letter-spacing: 0.15em; }
-            .hero-nav { gap: 10px; flex-wrap: wrap; }
-            .hero-nav a { font-size: 0.7rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <header class="hero-section">
-        
-        <div class="hero-overlay">
-            <h1 class="brand-name">SKY LOCKER</h1>
-            <p class="breed-title">Chow Chow</p>
-            
-            <div class="gold-divider"></div>
-            
-            <p class="legend-motto">Легенда, коснувшаяся неба: Древние стражи с лазурным сердцем.</p>
-            <p class="legend-motto">A legend that touched the sky: Ancient guardians with an azure heart.</p>
-            <p class="legend-motto">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
-            
-            <nav class="hero-nav">
-                <a href="#">Main</a>
-                <a href="#about">About</a>
-                <a href="#">Dogs</a>
-                <a href="#">Puppies</a>
-                <a href="#">Contact</a>
-            </nav>
-        </div>
-        
-    </header>
-
-    <section id="about" class="about-section">
-        <div class="about-content">
-            <h2>О нашем питомнике</h2>
-            <p>Здесь вы сможете разместить историю вашего питомника, информацию о вашей селекции и любви к породе.</p>
-        </div>
-    </section>
-
-</body>
-</html>
+        /* МОБИЛЬНАЯ АДАПТАЦИЯ (ИСПРАВЛЕНИЯ) */
+        @media (max-width: 768px) {
+            .hero-section {
+                /* ИСПРАВЛЕНИЕ: Высота на телефоне более надежная */
+                height: 100%;
+                min-height: 100vh;
+                padding: 40px 15px; /* Увеличены отступы, чтобы блок не при
