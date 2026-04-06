@@ -19,7 +19,7 @@
             scroll-behavior: smooth;
         }
 
-        /* 1. ГЛАВНЫЙ ЭКРАН */
+        /* 1. ГЛАВНЫЙ ЭКРАН (ВОЗВРАЩАЕМ СТАРЫЙ ДИЗАЙН) */
         .hero-section {
             position: relative;
             width: 100%;
@@ -27,163 +27,36 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #1a1a1a url('hero-bg.png') no-repeat center center;
+            /* Возвращаем вашу картинку со статуей собаки */
+            background: #1a1a1a url('bg-hero.jpg') no-repeat center center;
             background-size: cover;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .hero-overlay {
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.85); 
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border: 1px solid #d4af37;
+            /* Убираем белый фон, делаем полностью прозрачным */
+            background: transparent; 
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
-            max-width: 90%;
-            width: 600px;
+            max-width: 800px;
+            width: 100%;
         }
 
+        /* Белоснежный текст с темной кинематографичной тенью */
         .brand-name {
             font-family: 'Cinzel', serif;
-            font-size: clamp(1.8rem, 6vw, 3rem);
+            font-size: clamp(2.5rem, 8vw, 4rem);
             letter-spacing: 0.2em;
             margin: 0;
-            color: #111;
+            color: #ffffff;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
         }
 
         .breed-title {
-            font-size: 1rem;
-            color: #b8860b;
+            font-size: 1.3rem;
+            color: #d4af37;
             text-transform: uppercase;
             letter-spacing: 0.5em;
-            margin: 10px 0 20px 0;
-        }
-
-        .gold-divider {
-            width: 50px;
-            height: 1px;
-            background-color: #d4af37;
-            margin: 20px auto;
-        }
-
-        .legend-motto {
-            font-size: 0.95rem;
-            color: #333;
-            margin: 5px 0;
-            line-height: 1.5;
-        }
-
-        .hero-nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .hero-nav a {
-            text-decoration: none;
-            color: #111;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            margin: 10px 0 30px 0;
             font-weight: bold;
-            padding: 5px 10px;
-            border-bottom: 1px solid transparent;
-            transition: 0.3s;
-        }
-
-        .hero-nav a:hover {
-            border-color: #d4af37;
-            color: #d4af37;
-        }
-
-        /* 2. БЛОК О НАС */
-        .about-section {
-            padding: 100px 20px;
-            background-color: #fffdfa;
-            text-align: center;
-        }
-        
-        .about-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .about-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin: 40px 0;
-            text-align: left;
-        }
-
-        .about-col { flex: 1; min-width: 280px; }
-        
-        .about-highlight {
-            background-color: #f9f6f2;
-            padding: 30px;
-            border-radius: 2px;
-            margin-bottom: 40px;
-            border: 1px solid #eee;
-        }
-
-        /* АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ */
-        @media (max-width: 768px) {
-            .hero-section {
-                /* Смещаем фон выше, чтобы сердце было видно полностью */
-                background-position: top center; 
-                align-items: flex-end; /* Опускаем текстовый блок вниз */
-                padding-bottom: 10vh; /* Отступ снизу */
-            }
-            .hero-overlay {
-                padding: 25px 15px; /* Делаем блок компактнее */
-                width: 95%;
-            }
-            .brand-name { font-size: 2.2rem; }
-            .legend-motto { font-size: 0.85rem; }
-            .hero-nav { gap: 10px; margin-top: 20px; }
-            .hero-nav a { font-size: 0.65rem; }
-            .about-section { padding: 60px 20px; }
-        }
-    </style>
-</head>
-<body>
-
-    <header class="hero-section">
-        <div class="hero-overlay">
-            <h1 class="brand-name">SKY LOCKER</h1>
-            <p class="breed-title">Chow Chow</p>
-            <div class="gold-divider"></div>
-            <p class="legend-motto">Легенда, коснувшаяся неба</p>
-            <p class="legend-motto">A legend that touched the sky</p>
-            <p class="legend-motto">触碰天空的传奇</p>
-            <nav class="hero-nav">
-                <a href="#">Main</a>
-                <a href="#about">About</a>
-                <a href="#dogs">Dogs</a>
-                <a href="#puppies">Puppies</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <section id="about" class="about-section">
-        <div class="about-container">
-            <h2 style="font-family: 'Cinzel', serif; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 10px;">Наследие и Мастерство</h2>
-            <div style="width: 50px; height: 2px; background-color: #d4af37; margin: 0 auto 40px auto;"></div>
-            
-            <p style="font-size: 1.15rem; line-height: 1.8; text-align: justify; border-left: 3px solid #d4af37; padding-left: 20px; color: #333;">
-                Путь питомника <strong>Sky Locker</strong> начался не сегодня. За этим именем стоит более чем 10-летний опыт работы с серьезными породами. Эта школа научила нас главному: ответственности за каждую линию в родословной.
-            </p>
-            
-            <div class="about-grid">
-                <div class="about-col">
-                    <h3 style="color: #b8860b; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; font-family: sans-serif;">Философия выбора</h3>
-                    <p style="font-size: 1rem; color: #555;">Покоренные спокойствием и статью Чау-Чау, мы сделали их центром нашей вселенной. Для нас важен не только экстерьер, но и характер.</p>
-                </div>
-                <div class="about-col">
-                    <h3 style="color: #b8860b; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; font-family: sans-serif;">Гарантии качества</h3>
-                    <p style="font-size: 1rem; color: #555;">Все наши производители проходят обязательные генетические тесты и проверку на дисплазию. Мы не идем на
