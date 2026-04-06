@@ -1,37 +1,200 @@
-<section id="about" style="background-color: #fffdfa; padding: 80px 20px; text-align: center; color: #1a1a1a; font-family: 'Georgia', serif; overflow: hidden;">
-    <div style="max-width: 900px; margin: 0 auto;">
-        
-        <h2 style="font-size: 2.2rem; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 10px; color: #111;">Наследие и Мастерство</h2>
-        <div style="width: 50px; height: 2px; background-color: #d4af37; margin: 0 auto 40px auto;"></div>
-        
-        <p style="font-size: 1.15rem; line-height: 1.8; color: #333; margin-bottom: 30px; text-align: justify; border-left: 3px solid #d4af37; padding-left: 20px;">
-            Путь питомника <strong>Sky Locker</strong> начался не сегодня. За названием, которое мы выбрали для этого проекта, стоит более чем 10-летний опыт работы с серьезными породами — Американскими стаффордширскими терьерами и Питбулями. Эта школа научила нас главному: ответственности за каждую линию в родословной.
-        </p>
-        
-        <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; text-align: left;">
-            <div style="flex: 1; min-width: 280px;">
-                <h3 style="color: #b8860b; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;">Философия выбора</h3>
-                <p style="font-size: 1rem; color: #555;">Покоренные спокойствием и статью Чау-Чау, а также мощной харизмой Американских Булли, мы сделали их центром нашей вселенной. Для нас важен не только экстерьер, но и <strong>характер</strong> — мы растим собак, которые становятся гордостью своих владельцев.</p>
-            </div>
-            <div style="flex: 1; min-width: 280px;">
-                <h3 style="color: #b8860b; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;">Гарантии качества</h3>
-                <p style="font-size: 1rem; color: #555;">Здоровье — это база, на которой строится красота. Все наши производители проходят обязательные <strong>генетические тесты</strong> и проверку на дисплазию. Мы не идем на компромиссы там, где речь идет о качестве жизни наших выпускников.</p>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKY LOCKER — Premium Chow Chow & Bully Kennel</title>
+    
+    <style>
+        /* ОБЩИЕ НАСТРОЙКИ */
+        html {
+            scroll-behavior: smooth; /* Плавная прокрутка при нажатии на меню */
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; 
+            font-family: "Georgia", "Times New Roman", serif;
+        }
 
-        <div style="background-color: #f9f6f2; padding: 30px; border-radius: 2px; margin-bottom: 40px; border: 1px solid #eee;">
-            <p style="font-size: 1.1rem; color: #444; margin: 0;">
-                Наши собаки — члены семьи. Они живут с нами в загородном доме, а щенки с первых дней социализируются в стае, обучаясь правильному общению. Меня зовут <strong>Марго</strong>, и я лично контролирую каждый этап: от подбора топовых мировых производителей до отправки щенка в его новый дом.
+        /* 1. ГЛАВНЫЙ ЭКРАН (HERO) */
+        .hero-bg {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1a1a1a url('bg-hero.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .hero-overlay {
+            background: transparent; 
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .brand-name {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin: 0;
+            color: #ffffff;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
+        }
+
+        .breed-name {
+            font-size: 1.3rem;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 0.5em;
+            margin: 10px 0 30px 0;
+            font-weight: bold;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .gold-divider {
+            width: 50px;
+            height: 2px;
+            background-color: #d4af37;
+            margin: 0 auto 30px auto;
+        }
+
+        .legend-text {
+            margin: 12px 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        .legend-cn {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-top: 25px;
+            font-family: "STSong", "SimSun", "Songti SC", serif;
+            font-weight: bold;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        /* МЕНЮ */
+        nav { margin-top: 40px; }
+        nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin: 10px 15px;
+            font-weight: bold;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+            transition: 0.3s;
+        }
+        nav a:hover { color: #d4af37; }
+
+        /* 2. БЛОК: О НАС */
+        .about-section {
+            background-color: #fffdfa;
+            padding: 100px 20px;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .about-col { flex: 1; min-width: 280px; }
+        
+        .about-highlight {
+            background-color: #f9f6f2;
+            padding: 30px;
+            border-radius: 2px;
+            margin-bottom: 40px;
+            border: 1px solid #eee;
+        }
+
+        .about-img {
+            width: 100%;
+            max-width: 750px;
+            margin-top: 50px;
+            box-shadow: 20px 20px 0px #f0ece6;
+        }
+
+        /* МОБИЛЬНАЯ АДАПТАЦИЯ */
+        @media (max-width: 600px) {
+            nav a { display: block; margin: 15px 0; }
+            .about-section { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-bg">
+        <div class="hero-overlay">
+            <h1 class="brand-name">SKY LOCKER</h1>
+            <p class="breed-name">Chow Chow</p>
+            <div class="gold-divider"></div>
+            <p class="legend-text">Легенда, коснувшаяся неба: Древние стражи с лазурным сердцем.</p>
+            <p class="legend-text">A legend that touched the sky: Ancient guardians with an azure heart.</p>
+            <p class="legend-cn">触碰天空的传奇：拥有蔚蓝之心的远古守护者。</p>
+            <nav>
+                <a href="#">Main</a>
+                <a href="#about">About</a>
+                <a href="#dogs">Our Dogs</a>
+                <a href="#puppies">Puppies</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2 style="font-size: 2.2rem; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 10px;">Наследие и Мастерство</h2>
+            <div style="width: 50px; height: 2px; background-color: #d4af37; margin: 0 auto 40px auto;"></div>
+            
+            <p style="font-size: 1.15rem; line-height: 1.8; text-align: justify; border-left: 3px solid #d4af37; padding-left: 20px;">
+                Путь питомника <strong>Sky Locker</strong> начался более 10 лет назад. Опыт работы с Американскими стаффордширскими терьерами и Питбулями научил нас ответственности за каждую линию в родословной.
             </p>
-        </div>
+            
+            <div class="about-grid">
+                <div class="about-col">
+                    <h3 style="color: #b8860b; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;">Философия выбора</h3>
+                    <p style="font-size: 1rem; color: #555;">Покоренные спокойствием Чау-Чау и харизмой Американских Булли, мы сделали их центром нашей вселенной. Мы растим собак с безупречным экстерьером и идеальным характером.</p>
+                </div>
+                <div class="about-col">
+                    <h3 style="color: #b8860b; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;">Гарантии качества</h3>
+                    <p style="font-size: 1rem; color: #555;">Все наши производители проходят обязательные генетические тесты и проверку на дисплазию. Здоровье — это база нашей селекции.</p>
+                </div>
+            </div>
 
-        <p style="font-size: 1.1rem; color: #b8860b; font-style: italic; letter-spacing: 1px;">
-            «Sky Locker: создаем будущее в разных окрасах и типах шерсти, сохраняя чистоту породы»
-        </p>
+            <div class="about-highlight">
+                <p style="font-size: 1.1rem; color: #444; margin: 0;">
+                    Наши собаки живут с нами в загородном доме как члены семьи. Меня зовут <strong>Марго</strong>, и я лично контролирую каждый этап: от подбора производителей до отправки щенка в новый дом.
+                </p>
+            </div>
 
-        <div style="margin-top: 50px;">
-            <img src="about.jpg" alt="Sky Locker Kennel Life" style="width: 100%; max-width: 750px; border-radius: 0; box-shadow: 20px 20px 0px #f0ece6;">
+            <p style="font-size: 1.1rem; color: #b8860b; font-style: italic; letter-spacing: 1px;">
+                «Sky Locker: создаем будущее в разных окрасах и типах шерсти»
+            </p>
+
+            <img src="about.jpg" alt="Sky Locker Kennel" class="about-img">
         </div>
-        
-    </div>
-</section>
+    </section>
+
+</body>
+</html>
