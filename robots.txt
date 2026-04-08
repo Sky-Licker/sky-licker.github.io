@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://sky-licker.github.io/sitemap.xml
+
+# Боты поисковых систем
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Скорость сканирования
+Crawl-delay: 1
+
+# Предпочитаемый хост
+Host: sky-licker.github.io
