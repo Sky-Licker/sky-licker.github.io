@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -13,8 +12,7 @@
     ym(108461704, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/108461704" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sky Licker - премиальный питомник чау-чау. Здоровые, генетически тестированные собаки с безупречным экстерьером. Щенки чау-чау от профессионального заводчика.">
     <meta name="keywords" content="чау-чау, питомник, щенки, собаки, Sky Licker, Chow Chow, кремовый, рыжий, черный, длинношерстный, смуф, разведение, генетика, здоровье">
@@ -26,17 +24,14 @@
     <meta property="og:type" content="website">
     <title>SKY LICKER - Premium Chow Chow Kennel</title>
     
-    <!-- SEO и многоязычность -->
     <link rel="alternate" hreflang="ru" href="https://sky-licker.github.io/" />
     <link rel="alternate" hreflang="en" href="https://sky-licker.github.io/en/" />
     <link rel="alternate" hreflang="zh" href="https://sky-licker.github.io/zh/" />
     <link rel="alternate" hreflang="x-default" href="https://sky-licker.github.io/" />
     <link rel="canonical" href="https://sky-licker.github.io/" />
     
-    <!-- SEO файлы -->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     
-    <!-- Schema.org структурированные данные -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -60,7 +55,6 @@
     }
     </script>
     
-    <!-- Baidu Analytics -->
     <script>
     var _hmt = _hmt || [];
     (function() {
@@ -366,7 +360,7 @@
         .dog-img {
             width: 100%;
             height: 450px; /* Увеличили высоту */
-            object-fit: contain; /* Показываем всю собаку */
+            object-fit: cover; /* ИСПРАВЛЕНО НА COVER */
             object-position: center; /* Центрируем фото */
             border-bottom: 1px solid #222;
             background-color: #111; /* Черный фон для пустых областей */
@@ -476,7 +470,7 @@
             .about-section, .dogs-section, .contacts-section { padding: 80px 15px; }
             .section-title { font-size: 2rem; }
             .about-intro, .about-text, .dog-desc { text-align: left; }
-            .dog-img { height: 380px; object-fit: contain; object-position: center; background-color: #111; }
+            .dog-img { height: 380px; object-fit: cover; object-position: center; background-color: #111; } /* ИСПРАВЛЕНО НА COVER */
         }
 
         /* --- 4. КОНТАКТЫ --- */
