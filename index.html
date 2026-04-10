@@ -441,15 +441,17 @@
                     background-image: url('bg-hero-mobile@2x.jpg');
                 }
             }
-            /* Фон для about, dogs, contacts на мобильных - осветлён */
-            .about-section, .dogs-section, .contacts-section {
-                background-image: linear-gradient(180deg, rgba(40, 40, 40, 0.6) 0%, rgba(60, 60, 60, 0.8) 100%), url('about-bg-mobile.jpg');
+            /* Фон для about, dogs, contacts на мобильных - новый фон */
+            .about-section, .dogs-section, .contacts-section, .textured-bg {
+                background-image: linear-gradient(180deg, rgba(40, 40, 40, 0.6) 0%, rgba(60, 60, 60, 0.8) 100%), url('mobile-bg-new.jpg');
                 background-attachment: scroll;
+                background-size: cover;
+                background-position: center;
             }
             /* Retina для about, dogs, contacts на мобильных */
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-                .about-section, .dogs-section, .contacts-section {
-                    background-image: linear-gradient(180deg, rgba(40, 40, 40, 0.6) 0%, rgba(60, 60, 60, 0.8) 100%), url('about-bg-mobile@2x.jpg');
+                .about-section, .dogs-section, .contacts-section, .textured-bg {
+                    background-image: linear-gradient(180deg, rgba(40, 40, 40, 0.6) 0%, rgba(60, 60, 60, 0.8) 100%), url('mobile-bg-new.jpg');
                 }
             }
             .hero-overlay { 
@@ -475,11 +477,7 @@
             .hero-nav { display: flex; flex-direction: column; gap: 10px; }
             .hero-nav a { font-size: 0.9rem; display: block; width: 100%; margin: 5px 0; padding: 10px; border-radius: 4px; text-align: center; }
             
-            /* --- АВТОМАТИЧЕСКАЯ НАСТРОЙКА ТЕКСТУРЫ ДЛЯ ТЕЛЕФОНОВ --- */
-            .textured-bg { 
-                background-attachment: scroll; /* Отключаем параллакс на мобильных для скорости */
-                background-size: 800px; /* На телефоне узор мельче, чтобы прожилки были видны */
-            }
+
             
             .about-section, .dogs-section, .contacts-section { padding: 80px 15px; }
             .section-title { font-size: 2rem; }
