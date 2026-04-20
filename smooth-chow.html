@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Короткошерстный чау-чау (Смуф) в питомнике Sky Licker. Преимущества типа, особенности ухода и атлетичный экстерьер.">
+    <title>Короткошерстный чау-чау (Смуф) | Особенности типа | Sky Licker</title>
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+            background-color: #111111;
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Songti SC", "STSong", "SimSun", "Georgia", "Times New Roman", serif;
+            font-size: 18px;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+            color: #e0e0e0; 
+        }
+
+        .hero-section-article {
+            position: relative;
+            width: 100%;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #111;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('bg-hero.jpg'); 
+            background-size: cover;
+            background-position: center 25%;
+            background-repeat: no-repeat;
+            padding: 20px;
+            box-sizing: border-box;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .hero-overlay {
+            background: transparent; 
+            padding: 20px;
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .brand-name {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            letter-spacing: 0.15em;
+            margin: 0;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+        }
+
+        .breed-title {
+            font-size: 1.2rem;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin: 15px 0 30px 0;
+            font-weight: bold;
+        }
+
+        .gold-divider {
+            width: 60px;
+            height: 2px;
+            background-color: #d4af37;
+            margin: 0 auto 35px auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hero-nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: bold;
+            transition: 0.3s;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+            padding: 8px 15px;
+            border: 1px solid transparent;
+        }
+
+        .hero-nav a:hover {
+            color: #d4af37;
+            border-color: #d4af37;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .textured-bg {
+            position: relative;
+            background-image: linear-gradient(180deg, rgba(40, 40, 40, 0.7) 0%, rgba(60, 60, 60, 0.85) 100%), url('about234234.jpg');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 1200px;
+            background-attachment: fixed;
+        }
+
+        .article-section {
+            padding: 80px 20px 120px 20px;
+            border-bottom: 1px solid #222;
+            background-image: linear-gradient(180deg, rgba(30, 30, 30, 0.8) 0%, rgba(50, 50, 50, 0.9) 100%), url('about-bg-pc.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .article-container { 
+            max-width: 850px; 
+            margin: 0 auto; 
+        }
+
+        .article-title {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 25px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .article-subtitle {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
+            font-size: 1.6rem;
+            color: #d4af37;
+            margin: 50px 0 20px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .about-intro {
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: #f0f0f0;
+            margin-bottom: 50px;
+            border-left: 3px solid #d4af37;
+            padding-left: 25px;
+            font-weight: bold;
+        }
+
+        .about-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #e0e0e0;
+            margin-bottom: 25px;
+        }
+
+        .custom-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+        }
+
+        .custom-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .custom-list li::before {
+            content: '♦';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-size: 1.2rem;
+        }
+
+        .feature-box {
+            background: #151515;
+            padding: 30px;
+            border-radius: 4px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6), 0 0 20px rgba(212, 175, 55, 0.2);
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .feature-title {
+            color: #d4af37;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            text-decoration: none;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: 1px solid #d4af37;
+            border-radius: 4px;
+            background: rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-gold:hover {
+            background: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section-article { min-height: 40vh; background-position: center top; }
+            .article-title { font-size: 1.8rem; }
+            .article-subtitle { font-size: 1.3rem; }
+            .about-intro { font-size: 1.1rem; padding-left: 15px; }
+            .about-text, .custom-list li { font-size: 1.05rem; }
+            .hero-nav { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section-article">
+        <div class="hero-overlay">
+            <h1 class="brand-name">SKY LICKER</h1>
+            <p class="breed-title">Полезная информация</p>
+            <div class="gold-divider" style="margin-bottom: 20px;"></div>
+            
+            <nav class="hero-nav" aria-label="Основная навигация">
+                <a href="index.html">← На главную</a>
+                <a href="rough-chow.html">Длинношерстный тип</a>
+                <a href="index.html#contact">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="article-section textured-bg">
+        <div class="article-container">
+            
+            <h2 class="article-title">Короткошерстный чау-чау (Смуф): Атлетизм и чистота линий</h2>
+            
+            <p class="about-intro">
+                Смуф — это не «подстриженный» чау-чау, а самостоятельный и невероятно эффектный тип шерсти. Короткая, плотная и абсолютно ровная шерсть смуфа делает его похожим на ожившую плюшевую игрушку, при этом подчеркивая всю мощь и благородство древней породы.
+            </p>
+
+            <p class="about-text">
+                Если длинношерстный тип скрывает анатомию под богатой гривой, то смуф демонстрирует её во всей красе. Именно этот тип шерсти выбирают те, кто ценит в породе атлетизм, четкие контуры и практичность.
+            </p>
+
+            <h3 class="article-subtitle">Экстерьер: Плюшевый лев</h3>
+            
+            <p class="about-text">
+                Шерсть смуфа — короткая, густая, стоячая и очень плотная по своей структуре. У них нет длинной гривы или «штанов», но за счет обильного подшерстка собака выглядит объемной и очень мягкой на ощупь. 
+            </p>
+            <p class="about-text">
+                Благодаря такой структуре, мы можем видеть безупречную анатомию, мощный костяк и выразительную мускулатуру. Яркий пример такого типа в нашем питомнике — Юстин. Его рыжий окрас на короткой шерсти смотрится особенно сочно и эффектно, подчеркивая каждый нюанс его великолепного сложения.
+            </p>
+
+            <div class="feature-box">
+                <h3 class="feature-title">Преимущества смуфа в быту</h3>
+                <p class="about-text" style="font-size: 1.05rem;">Многие называют смуфов «чау-чау для ленивых», но это скорее выбор в пользу комфорта и активного образа жизни.</p>
+                
+                <ul class="custom-list" style="margin-bottom: 0;">
+                    <li><strong>Минимум колтунов:</strong> Короткая шерсть смуфа практически не путается. Вам не нужно часами распутывать узлы за ушами или на «штанах».</li>
+                    <li><strong>Скорость ухода:</strong> Полноценное вычесывание занимает в разы меньше времени, чем у длинношерстного типа.</li>
+                    <li><strong>Чистота после прогулок:</strong> Смуфы приносят в дом гораздо меньше песка, веток и репьев. После прогулки в дождь такую собаку достаточно протереть полотенцем.</li>
+                    <li><strong>Быстрая сушка:</strong> После мытья смуф сохнет значительно быстрее, что облегчает регулярные гигиенические процедуры.</li>
+                </ul>
+            </div>
+
+            <h3 class="article-subtitle">Кому идеально подойдет смуф?</h3>
+            
+            <p class="about-text">Этот тип чау-чау станет вашим идеальным компаньоном, если:</p>
+            
+            <ul class="custom-list">
+                <li>Вы ведете активный образ жизни и любите долгие прогулки в любую погоду.</li>
+                <li>Вы цените «плюшевую» эстетику и четкость линий в экстерьере собаки.</li>
+                <li>Вам важна практичность и вы не готовы тратить много времени на сложный профессиональный груминг.</li>
+                <li>Вы хотите видеть все нюансы мимики и движений вашего питомца, не скрытые длинной шерстью.</li>
+            </ul>
+
+            <p class="about-text" style="text-align: center; font-style: italic; color: #d4af37; margin-top: 40px; font-size: 1.25rem;">
+                Смуф — это гармония силы и нежности, облеченная в практичную форму. Это выбор современного человека, ценящего свое время и классическую красоту породы.
+            </p>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="index.html#contact" class="btn-gold">Узнать о наличии щенков смуфа</a>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
