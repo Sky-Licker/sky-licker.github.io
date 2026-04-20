@@ -1,1 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Длинношерстный чау-чау (Раф) в питомнике Sky Licker. Особенности ухода, характер и кому подойдет этот тип породы.">
+    <title>Длинношерстный чау-чау (Раф) | Особенности типа | Sky Licker</title>
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+    
+    <style>
+        /* БАЗОВЫЕ СТИЛИ С ГЛАВНОЙ СТРАНИЦЫ */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+            background-color: #111111;
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Songti SC", "STSong", "SimSun", "Georgia", "Times New Roman", serif;
+            font-size: 18px;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+            color: #e0e0e0; 
+        }
 
+        /* АДАПТИРОВАННЫЙ HERO-БЛОК ДЛЯ СТАТЬИ (Сделан чуть ниже, чтобы быстрее перейти к тексту) */
+        .hero-section-article {
+            position: relative;
+            width: 100%;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #111;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('bg-hero.jpg'); 
+            background-size: cover;
+            background-position: center 25%;
+            background-repeat: no-repeat;
+            padding: 20px;
+            box-sizing: border-box;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .hero-overlay {
+            background: transparent; 
+            padding: 20px;
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .brand-name {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            letter-spacing: 0.15em;
+            margin: 0;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+        }
+
+        .breed-title {
+            font-size: 1.2rem;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin: 15px 0 30px 0;
+            font-weight: bold;
+        }
+
+        .gold-divider {
+            width: 60px;
+            height: 2px;
+            background-color: #d4af37;
+            margin: 0 auto 35px auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* НАВИГАЦИЯ */
+        .hero-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hero-nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: bold;
+            transition: 0.3s;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+            padding: 8px 15px;
+            border: 1px solid transparent;
+        }
+
+        .hero-nav a:hover {
+            color: #d4af37;
+            border-color: #d4af37;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* ТЕКСТУРИРОВАННЫЙ ФОН */
+        .textured-bg {
+            position: relative;
+            background-image: linear-gradient(180deg, rgba(40, 40, 40, 0.7) 0%, rgba(60, 60, 60, 0.85) 100%), url('about234234.jpg');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 1200px;
+            background-attachment: fixed;
+        }
+
+        /* БЛОК СТАТЬИ */
+        .article-section {
+            padding: 80px 20px 120px 20px;
+            border-bottom: 1px solid #222;
+            background-image: linear-gradient(180deg, rgba(30, 30, 30, 0.8) 0%, rgba(50, 50, 50, 0.9) 100%), url('about-bg-pc.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .article-container { 
+            max-width: 850px; 
+            margin: 0 auto; 
+        }
+
+        .article-title {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 25px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .article-subtitle {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Georgia", serif;
+            font-size: 1.6rem;
+            color: #d4af37;
+            margin: 50px 0 20px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .about-intro {
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: #f0f0f0;
+            margin-bottom: 50px;
+            border-left: 3px solid #d4af37;
+            padding-left: 25px;
+            font-weight: bold;
+        }
+
+        .about-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #e0e0e0;
+            margin-bottom: 25px;
+        }
+
+        /* Списки в стиле сайта */
+        .custom-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+        }
+
+        .custom-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .custom-list li::before {
+            content: '♦';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-size: 1.2rem;
+        }
+
+        /* БЛОКИ ВНИМАНИЯ */
+        .feature-box {
+            background: transparent;
+            padding: 30px;
+            border-radius: 4px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6), 0 0 20px rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(16px);
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .feature-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 100%);
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        .feature-title {
+            color: #d4af37;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            text-decoration: none;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: 1px solid #d4af37;
+            border-radius: 4px;
+            background: rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-gold:hover {
+            background: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            color: #fff;
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            .hero-section-article {
+                min-height: 40vh;
+                background-position: center top;
+            }
+            .article-title { font-size: 1.8rem; }
+            .article-subtitle { font-size: 1.3rem; }
+            .about-intro { font-size: 1.1rem; padding-left: 15px; }
+            .about-text, .custom-list li { font-size: 1.05rem; }
+            .hero-nav { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section-article">
+        <div class="hero-overlay">
+            <h1 class="brand-name">SKY LICKER</h1>
+            <p class="breed-title">Полезная информация</p>
+            <div class="gold-divider" style="margin-bottom: 20px;"></div>
+            
+            <nav class="hero-nav" aria-label="Основная навигация">
+                <a href="index.html">← На главную</a>
+                <a href="index.html#dogs">Наши собаки</a>
+                <a href="index.html#contact">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="article-section textured-bg">
+        <div class="article-container">
+            
+            <h2 class="article-title">Длинношерстный чау-чау (Раф): Роскошная классика. Кому подойдет этот тип?</h2>
+            
+            <p class="about-intro">
+                Выбор между длинношерстным (раф) и короткошерстным (смуф) чау-чау — это первое важное решение, которое предстоит принять будущему владельцу. Генетически и по своему характеру это абсолютно одинаковые собаки с тем же легендарным спокойствием и лазурным языком. Главное и единственное отличие заключается в длине шерсти.
+            </p>
+
+            <p class="about-text">
+                Длинношерстный чау-чау — это абсолютная классика, тот самый узнаваемый образ «льва» или плюшевого медведя, который веками покорял императорские дворы.
+            </p>
+
+            <h3 class="article-subtitle">Эстетика и визуальный объем</h3>
+            
+            <p class="about-text">
+                В отличие от смуфов, обладающих короткой, ровной и плотной шерстью, которая сразу демонстрирует мощный костяк и рельеф мускулатуры, рафы берут невероятным объемом. 
+            </p>
+            <p class="about-text">
+                Остевой волос у них длинный и жесткий, а подшерсток — невероятно густой и пушистый. Именно он создает знаменитый богатый воротник вокруг шеи, роскошные «штаны» на лапах и великолепный пушистый хвост. Длинная шерсть потрясающе раскрывает любой окрас: кремовые собаки выглядят воплощением нежности и грации, а длинношерстные черные чау-чау завораживают глубиной и выразительностью.
+            </p>
+
+            <div class="feature-box">
+                <h3 class="feature-title">Реалии ухода: к чему нужно быть готовым</h3>
+                <p class="about-text" style="font-size: 1.05rem;">Если вы склоняетесь к выбору рафа, вы должны честно ответить себе на вопрос: готовы ли вы инвестировать время в груминг? Роскошная грива требует регулярного внимания.</p>
+                
+                <ul class="custom-list" style="margin-bottom: 0;">
+                    <li><strong>Регулярное вычесывание:</strong> Длинношерстного чау-чау необходимо тщательно прочесывать металлическим гребнем и пуходеркой минимум 1–2 раза в неделю, прорабатывая шерсть от самых корней.</li>
+                    <li><strong>Периоды линьки:</strong> Дважды в год рафы масштабно сбрасывают подшерсток. В эти периоды вычесывать собаку придется практически ежедневно.</li>
+                    <li><strong>Мытье и сушка:</strong> Купание длинношерстной собаки — это полноценное мероприятие. После мытья шерсть категорически нельзя оставлять сохнуть естественным путем. Вам обязательно потребуется профессиональный компрессор (мощный фен).</li>
+                    <li><strong>Погодные условия:</strong> Осенью и весной длинная шерсть на лапах и животе собирает больше грязи во время прогулок по влажной улице.</li>
+                </ul>
+            </div>
+
+            <h3 class="article-subtitle">Идеальный владелец для длинношерстного чау-чау</h3>
+            
+            <p class="about-text">Длинношерстный тип станет для вас идеальным выбором, если:</p>
+            
+            <ul class="custom-list">
+                <li>Вас восхищает классический, монументальный образ породы с богатой гривой.</li>
+                <li>Вы воспринимаете уход за шерстью не как тяжелую повинность, а как приятный медитативный процесс и способ общения с собакой.</li>
+                <li>Вы готовы приобрести базовый набор профессиональных инструментов или регулярно посещать грумера.</li>
+                <li>Вы предпочитаете неспешные, степенные прогулки, после которых у вас есть время привести собаку в порядок.</li>
+            </ul>
+
+            <p class="about-text" style="text-align: center; font-style: italic; color: #d4af37; margin-top: 40px; font-size: 1.25rem;">
+                Выбор длинношерстного чау-чау — это выбор в пользу безупречной, сногсшибательной эстетики, которая требует ответственности и любви к деталям.
+            </p>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="index.html#contact" class="btn-gold">Связаться с питомником</a>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
